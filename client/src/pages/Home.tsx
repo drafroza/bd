@@ -62,7 +62,7 @@ export default function Home() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: 'url(/manus-storage/hero-background_61e70b8e.png)',
+            backgroundImage: 'url(https://images.unsplash.com/photo-1576091160550-2173f7f869?w=1200&h=800&fit=crop)',
             backgroundPosition: 'center',
           }}
         >
@@ -73,7 +73,7 @@ export default function Home() {
         <div className="relative z-10 container mx-auto px-4 text-center text-white fade-in-up">
           <div className="mb-6 animate-bounce">
             <img
-              src="/manus-storage/dr-afroza-logo_34ab733b.png"
+              src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop"
               alt="Dr. Afroza Logo"
               className="h-20 w-20 mx-auto"
             />
@@ -148,7 +148,7 @@ export default function Home() {
             {/* Right Image */}
             <div className="fade-in-right">
               <img
-                src="/manus-storage/professional-portrait-placeholder_49663b80.png"
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop"
                 alt="Dr. Afroza Professional Portrait"
                 className="rounded-lg shadow-2xl w-full h-auto object-cover"
               />
