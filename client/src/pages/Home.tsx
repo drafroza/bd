@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Download, Award, Users, Heart } from 'lucide-react';
 import { Link } from 'wouter';
 import Header from '@/components/Header';
@@ -62,7 +62,7 @@ export default function Home() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: 'url(https://images.unsplash.com/photo-1576091160550-2173f7f869?w=1200&h=800&fit=crop)',
+            backgroundImage: 'url(/manus-storage/Homepage and logo pic_42767fb2.jpg)',
             backgroundPosition: 'center',
           }}
         >
@@ -73,9 +73,9 @@ export default function Home() {
         <div className="relative z-10 container mx-auto px-4 text-center text-white fade-in-up">
           <div className="mb-6 animate-bounce">
             <img
-              src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop"
+              src="/manus-storage/Homepage and logo pic_42767fb2.jpg"
               alt="Dr. Afroza Logo"
-              className="h-20 w-20 mx-auto"
+              className="h-20 w-20 mx-auto rounded-full object-cover"
             />
           </div>
           <h1 className="text-5xl md:text-7xl font-bold mb-4 text-white">
@@ -98,7 +98,7 @@ export default function Home() {
             </a>
             <a
               href="#services"
-              className="px-8 py-4 bg-white/20 text-white font-semibold rounded-lg hover:bg-white/30 transition-all duration-300 hover:scale-105 shadow-lg backdrop-blur-sm"
+              className="px-8 py-4 bg-white/20 text-white font-semibold rounded-lg hover:bg-white/30 transition-all duration-300 hover:scale-105 shadow-lg border border-white/30"
             >
               Learn More
             </a>
@@ -113,42 +113,58 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Professional Introduction Section */}
+      {/* Statistics Section */}
+      <section className="py-16 md:py-24 bg-primary text-white">
+        <div className="container">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { icon: Users, label: 'Patients Cared', value: counters.patients, suffix: '+' },
+              { icon: Heart, label: 'Years of Experience', value: counters.experience, suffix: '+' },
+              { icon: Award, label: 'Awards & Recognition', value: counters.awards, suffix: '+' },
+            ].map((stat, idx) => {
+              const Icon = stat.icon;
+              return (
+                <div key={idx} className="text-center">
+                  <Icon className="w-12 h-12 mx-auto mb-4 text-accent" />
+                  <p className="text-4xl md:text-5xl font-bold mb-2">
+                    {stat.value}
+                    {stat.suffix}
+                  </p>
+                  <p className="text-lg text-gray-100">{stat.label}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Introduction Section */}
       <section className="py-16 md:py-24 bg-white">
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div className="fade-in-left">
               <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
-                Professional Profile
+                Professional Excellence in Women's Healthcare
               </h2>
-              <div className="space-y-4 text-foreground">
-                <p className="text-lg leading-relaxed">
-                  A dedicated and compassionate medical professional with a solid academic foundation from <strong>Rajshahi Medical College</strong>. Currently specializing in <strong>Obstetrics & Gynaecology</strong> (FCPS Part-I).
-                </p>
-                <p className="text-lg leading-relaxed">
-                  With hands-on clinical experience in maternal-fetal medicine, obstetric emergencies, and comprehensive women's healthcare, I am committed to providing evidence-based treatment with a personal touch.
-                </p>
-                <p className="text-lg leading-relaxed">
-                  <strong>BMDC Registration No: 142636</strong>
-                </p>
-              </div>
-
-              {/* Download CV Button */}
+              <p className="text-lg text-foreground mb-4">
+                I am Dr. Mst. Afroza Akter Nishy, a dedicated and compassionate medical professional with a solid academic foundation from Rajshahi Medical College. Currently specializing in Obstetrics & Gynaecology (FCPS Part-I), I am committed to advancing women's healthcare through evidence-based clinical practice, empathy, and continuous learning.
+              </p>
+              <p className="text-lg text-foreground mb-8">
+                My journey in medicine began with a passion for understanding the complexities of women's health and providing compassionate care to every patient. Throughout my medical education and clinical training, I have developed a deep appreciation for the importance of patient-centered care, ethical practice, and ongoing professional development.
+              </p>
               <a
-                href="/CV - Dr. Afroza.PDF"
-                download
-                className="inline-flex items-center gap-2 mt-8 px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-all duration-300 hover:scale-105 shadow-lg"
+                href="/about"
+                className="inline-block px-8 py-4 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-all duration-300 hover:scale-105 shadow-lg"
               >
-                <Download size={20} />
-                Download CV
+                Read Full Biography
               </a>
             </div>
 
             {/* Right Image */}
             <div className="fade-in-right">
               <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop"
+                src="/manus-storage/Homepage and logo pic_42767fb2.jpg"
                 alt="Dr. Afroza Professional Portrait"
                 className="rounded-lg shadow-2xl w-full h-auto object-cover"
               />
@@ -157,161 +173,37 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FCPS Part-I Highlight */}
+      {/* Featured Sections */}
       <section className="py-16 md:py-24 bg-secondary-bg">
         <div className="container">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
-              FCPS Part-I Achievement
-            </h2>
-            <p className="text-xl text-foreground max-w-2xl mx-auto">
-              Successfully completed FCPS Part-I (Obstetrics & Gynaecology) from Bangladesh College of Physicians and Surgeons in 2026
-            </p>
-          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-12 text-center">
+            Key Highlights
+          </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                icon: <Heart className="w-12 h-12" />,
-                title: 'Clinical Excellence',
-                description: 'Comprehensive training in obstetric and gynecological care',
+                title: 'Clinical Experience',
+                description: 'Comprehensive hands-on experience in obstetrics, gynecology, and emergency medical care',
+                icon: '🏥',
               },
               {
-                icon: <Award className="w-12 h-12" />,
-                title: 'Board Certified',
-                description: 'Recognized qualification from BCPS',
+                title: 'Professional Qualifications',
+                description: 'MBBS from Rajshahi Medical College and FCPS Part-I specialization',
+                icon: '📜',
               },
               {
-                icon: <Users className="w-12 h-12" />,
-                title: 'Patient-Centered',
-                description: 'Dedicated to compassionate and evidence-based care',
+                title: 'Patient-Centered Care',
+                description: 'Dedicated to providing compassionate, ethical, and evidence-based healthcare',
+                icon: '❤️',
               },
             ].map((item, idx) => (
-              <div
-                key={idx}
-                className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 text-center"
-              >
-                <div className="flex justify-center mb-4 text-accent">
-                  {item.icon}
-                </div>
-                <h3 className="text-2xl font-bold text-primary mb-3">
-                  {item.title}
-                </h3>
-                <p className="text-foreground">
-                  {item.description}
-                </p>
+              <div key={idx} className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                <div className="text-5xl mb-4">{item.icon}</div>
+                <h3 className="text-2xl font-bold text-primary mb-3">{item.title}</h3>
+                <p className="text-foreground">{item.description}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Statistics Counter Section */}
-      <section className="py-16 md:py-24 bg-primary text-white">
-        <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div className="fade-in-up">
-              <div className="text-5xl md:text-6xl font-bold text-accent mb-2">
-                {counters.patients}+
-              </div>
-              <p className="text-lg opacity-90">
-                Patients Cared For
-              </p>
-            </div>
-            <div className="fade-in-up">
-              <div className="text-5xl md:text-6xl font-bold text-accent mb-2">
-                {counters.experience}+
-              </div>
-              <p className="text-lg opacity-90">
-                Years of Clinical Experience
-              </p>
-            </div>
-            <div className="fade-in-up">
-              <div className="text-5xl md:text-6xl font-bold text-accent mb-2">
-                {counters.awards}+
-              </div>
-              <p className="text-lg opacity-90">
-                Awards & Recognitions
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section id="services" className="py-16 md:py-24 bg-white">
-        <div className="container">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
-              Services & Expertise
-            </h2>
-            <p className="text-xl text-foreground max-w-2xl mx-auto">
-              Comprehensive women's healthcare services
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              'Antenatal & Postnatal Care',
-              'Normal Delivery Management',
-              'Obstetric First Aid',
-              'ECG Interpretation',
-              'Emergency Resuscitation',
-              'Patient Counseling',
-            ].map((service, idx) => (
-              <div
-                key={idx}
-                className="bg-secondary-bg p-6 rounded-lg border-l-4 border-accent hover:shadow-lg transition-all duration-300"
-              >
-                <h3 className="text-xl font-semibold text-primary mb-2">
-                  {service}
-                </h3>
-                <p className="text-foreground opacity-80">
-                  Professional medical service with compassionate care
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Awards Preview Section */}
-      <section className="py-16 md:py-24 bg-secondary-bg">
-        <div className="container">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
-              Awards & Recognition
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white p-8 rounded-lg shadow-lg">
-              <Award className="w-12 h-12 text-accent mb-4" />
-              <h3 className="text-2xl font-bold text-primary mb-3">
-                Best Performer Award
-              </h3>
-              <p className="text-foreground">
-                Rajshahi Medical College Hospital - Outstanding dedication and clinical performance in Medicine Unit-III during internship
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-lg shadow-lg">
-              <Award className="w-12 h-12 text-accent mb-4" />
-              <h3 className="text-2xl font-bold text-primary mb-3">
-                Merit Scholarship
-              </h3>
-              <p className="text-foreground">
-                Dutch-Bangla Bank (DBBL) - 5-year competitive scholarship (2017-2022) for consistent academic excellence
-              </p>
-            </div>
-          </div>
-
-          <div className="text-center mt-8">
-            <Link href="/resume">
-              <a className="inline-flex items-center gap-2 px-8 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-all duration-300 hover:scale-105">
-                View Full Resume
-              </a>
-            </Link>
           </div>
         </div>
       </section>
@@ -320,16 +212,25 @@ export default function Home() {
       <section className="py-16 md:py-24 bg-primary text-white">
         <div className="container text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Ready to Discuss Your Healthcare Needs?
+            Ready to Connect?
           </h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
-            Get in touch for professional medical consultations and healthcare services
+            Whether you have medical inquiries, professional collaboration opportunities, or just want to learn more, I am here to help.
           </p>
-          <Link href="/contact">
-            <a className="inline-block px-8 py-4 bg-accent text-primary font-semibold rounded-lg hover:bg-accent/90 transition-all duration-300 hover:scale-105 shadow-lg">
-              Contact Me Today
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="/contact"
+              className="px-8 py-4 bg-accent text-primary font-semibold rounded-lg hover:bg-accent/90 transition-all duration-300 hover:scale-105 shadow-lg"
+            >
+              Contact Me
             </a>
-          </Link>
+            <a
+              href="/resume"
+              className="px-8 py-4 bg-white/20 text-white font-semibold rounded-lg hover:bg-white/30 transition-all duration-300 hover:scale-105 shadow-lg border border-white/30"
+            >
+              View Resume
+            </a>
+          </div>
         </div>
       </section>
 

@@ -40,7 +40,7 @@ export default function Header() {
         <Link href="/">
           <a className="flex items-center gap-2 group">
             <img
-              src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100"
+              src="/manus-storage/Homepage and logo pic_42767fb2.jpg"
               alt="Dr. Afroza Logo"
               className="h-10 w-10 transition-transform duration-300 group-hover:scale-110"
             />
