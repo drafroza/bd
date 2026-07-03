@@ -62,7 +62,7 @@ export default function Home() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: 'url(/manus-storage/Homepage and logo pic_42767fb2.jpg)',
+            backgroundImage: 'url(/images/homepage-logo.jpg)',
             backgroundPosition: 'center',
           }}
         >
@@ -73,7 +73,7 @@ export default function Home() {
         <div className="relative z-10 container mx-auto px-4 text-center text-white fade-in-up">
           <div className="mb-6 animate-bounce">
             <img
-              src="/manus-storage/Homepage and logo pic_42767fb2.jpg"
+              src="/images/homepage-logo.jpg"
               alt="Dr. Afroza Logo"
               className="h-20 w-20 mx-auto rounded-full object-cover"
             />
@@ -164,7 +164,7 @@ export default function Home() {
             {/* Right Image */}
             <div className="fade-in-right">
               <img
-                src="/manus-storage/Homepage and logo pic_42767fb2.jpg"
+                src="/images/homepage-logo.jpg"
                 alt="Dr. Afroza Professional Portrait"
                 className="rounded-lg shadow-2xl w-full h-auto object-cover"
               />

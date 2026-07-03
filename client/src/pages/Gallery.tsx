@@ -26,14 +26,14 @@ export default function Gallery() {
       id: 2,
       title: 'World Sight Day 2024',
       category: 'Medical Activities',
-      image: '/manus-storage/Photos from the rally_fdfe266d.jpg',
+      image: '/images/rally-photos.jpg',
       description: 'Active participation in World Sight Day campaign for child eye care',
     },
     {
       id: 3,
       title: 'Medical Excellence',
       category: 'Professional',
-      image: '/manus-storage/Photos from the rally_fdfe266d.jpg',
+      image: '/images/rally-photos.jpg',
       description: 'Commitment to healthcare excellence and patient care',
     },
   ];
