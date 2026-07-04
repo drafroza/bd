@@ -31,10 +31,10 @@ export default function Gallery() {
     },
     {
       id: 3,
-      title: 'Medical Excellence',
-      category: 'Professional',
-      image: '/images/rally-photos.jpg',
-      description: 'Commitment to healthcare excellence and patient care',
+      title: 'During Surgery',
+      category: 'Medical Activities',
+      image: '/images/during-surgery.jpg',
+      description: 'Professional medical practice and surgical expertise',
     },
   ];
 
