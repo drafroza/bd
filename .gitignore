@@ -112,3 +112,4 @@ temp/
 client/public/__manus__/version.json
 .project-config.json
 .vercel
+# Vercel deployment fix - trigger redeploy
