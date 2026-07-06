@@ -36,6 +36,13 @@ export default function Gallery() {
       image: '/images/during-surgery.jpg',
       description: 'Professional medical practice and surgical expertise',
     },
+    {
+      id: 4,
+      title: 'Scientific Seminar Award',
+      category: 'Awards & Recognition',
+      image: '/images/award-seminar.jpg',
+      description: 'Recognition at Scientific Seminar on Overview of Use of Insulin in DM',
+    },
   ];
 
   return (
