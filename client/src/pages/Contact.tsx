@@ -6,6 +6,7 @@ import { Mail, Phone, MapPin, MessageCircle } from 'lucide-react';
 /**
  * Design: Elegant Healthcare Luxury
  * Contact page with contact information and communication channels
+ * WhatsApp is the primary contact method
  */
 export default function Contact() {
   useEffect(() => {
@@ -28,22 +29,50 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Contact Information */}
+      {/* Primary Contact - WhatsApp */}
+      <section className="py-16 md:py-24 bg-gradient-to-r from-green-50 to-green-100">
+        <div className="container">
+          <div className="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-xl border-l-4 border-green-600">
+            <div className="flex items-center gap-4 mb-6">
+              <MessageCircle className="w-16 h-16 text-green-600 flex-shrink-0" />
+              <div>
+                <h2 className="text-3xl font-bold text-primary mb-2">Preferred Contact Method</h2>
+                <p className="text-foreground">WhatsApp for fastest response</p>
+              </div>
+            </div>
+            <a
+              href="https://wa.me/dr.afroza.bd"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-8 py-4 bg-green-600 text-white font-bold text-lg rounded-lg hover:bg-green-700 transition-all duration-300 hover:scale-105 shadow-lg"
+            >
+              💬 Open WhatsApp Chat
+            </a>
+            <p className="text-sm text-muted-foreground mt-4">
+              WhatsApp: wa.me/dr.afroza.bd | Response within 1 hour
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Information Grid */}
       <section className="py-16 md:py-24 bg-white">
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
-            {/* Phone */}
-            <div className="bg-secondary-bg p-8 rounded-lg text-center hover:shadow-lg transition-all duration-300">
-              <Phone className="w-12 h-12 text-accent mx-auto mb-4" />
-              <h3 className="text-2xl font-bold text-primary mb-3">Call</h3>
+            {/* WhatsApp - Primary */}
+            <div className="bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-lg border-2 border-green-600 text-center hover:shadow-lg transition-all duration-300">
+              <MessageCircle className="w-12 h-12 text-green-600 mx-auto mb-4" />
+              <h3 className="text-2xl font-bold text-primary mb-3">WhatsApp</h3>
               <a
-                href="tel:+8801797321210"
-                className="text-lg text-foreground hover:text-accent transition-colors duration-300 font-semibold"
+                href="https://wa.me/dr.afroza.bd"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-lg text-green-600 hover:text-green-700 transition-colors duration-300 font-bold"
               >
-                +880 1797 321210
+                wa.me/dr.afroza.bd
               </a>
               <p className="text-sm text-muted-foreground mt-2">
-                Available for professional consultations
+                Quick messaging - Response within 1 hour
               </p>
             </div>
 
@@ -58,24 +87,22 @@ export default function Contact() {
                 drafroza99@gmail.com
               </a>
               <p className="text-sm text-muted-foreground mt-2">
-                Professional inquiries welcome
+                Professional inquiries - Response within 24 hours
               </p>
             </div>
 
-            {/* WhatsApp */}
+            {/* Phone - RMCH */}
             <div className="bg-secondary-bg p-8 rounded-lg text-center hover:shadow-lg transition-all duration-300">
-              <MessageCircle className="w-12 h-12 text-accent mx-auto mb-4" />
-              <h3 className="text-2xl font-bold text-primary mb-3">WhatsApp</h3>
+              <Phone className="w-12 h-12 text-accent mx-auto mb-4" />
+              <h3 className="text-2xl font-bold text-primary mb-3">Phone (RMCH)</h3>
               <a
-                href="https://wa.me/8801797321210"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="tel:+880247811157"
                 className="text-lg text-foreground hover:text-accent transition-colors duration-300 font-semibold"
               >
-                +880 1797 321210
+                024-7811157
               </a>
               <p className="text-sm text-muted-foreground mt-2">
-                Quick messaging available
+                Rajshahi Medical College Hospital
               </p>
             </div>
           </div>
@@ -88,6 +115,9 @@ export default function Contact() {
                 <h3 className="text-2xl font-bold text-primary mb-2">Location</h3>
                 <p className="text-lg text-foreground mb-4">
                   Jhalakathi Sadar, Jhalakathi, Bangladesh
+                </p>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Also affiliated with Rajshahi Medical College Hospital (RMCH)
                 </p>
                 <a
                   href="https://www.google.com/maps/place/Rajshahi+Medical+College+Hospital,Rajshahi,+medical+college+road,+laxmipur,+6000/@24.3712881,88.5872372,17z/data=!4m6!3m5!1s0x39fbef02d4899947:0x6c5031675c0796a8!8m2!3d24.372019!4d88.5864259!16zL20vMDVqajYx?utm_campaign=ml-ardi&g_ep=Eg1tbF8yMDI2MDYyOV8wIOC7DCoASAJQAQ%3D%3D"
@@ -133,40 +163,47 @@ export default function Contact() {
       <section className="py-16 md:py-24 bg-white">
         <div className="container">
           <h2 className="text-4xl font-bold text-primary mb-12 text-center">
-            Preferred Communication Channels
+            Communication Channels
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {[
               {
-                title: 'For Urgent Medical Consultations',
-                method: 'Call or WhatsApp',
-                contact: '+880 1797 321210',
-                response: 'Immediate response',
+                title: 'For Quick Messages',
+                method: 'WhatsApp',
+                contact: 'wa.me/dr.afroza.bd',
+                response: 'Response within 1 hour',
+                icon: '💬',
               },
               {
                 title: 'For Professional Inquiries',
                 method: 'Email',
                 contact: 'drafroza99@gmail.com',
                 response: 'Response within 24 hours',
+                icon: '📧',
               },
               {
-                title: 'For Quick Messages',
-                method: 'WhatsApp',
-                contact: '+880 1797 321210',
-                response: 'Response within 1 hour',
+                title: 'For Hospital Inquiries',
+                method: 'Phone (RMCH)',
+                contact: '024-7811157',
+                response: 'During office hours',
+                icon: '☎️',
               },
               {
                 title: 'For Detailed Discussions',
-                method: 'Phone Call',
-                contact: '+880 1797 321210',
+                method: 'WhatsApp Call',
+                contact: 'wa.me/dr.afroza.bd',
                 response: 'By appointment',
+                icon: '📞',
               },
             ].map((channel, idx) => (
-              <div key={idx} className="bg-secondary-bg p-6 rounded-lg border-l-4 border-accent">
-                <h3 className="text-xl font-bold text-primary mb-3">
-                  {channel.title}
-                </h3>
+              <div key={idx} className="bg-secondary-bg p-6 rounded-lg border-l-4 border-accent hover:shadow-lg transition-all duration-300">
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="text-3xl">{channel.icon}</span>
+                  <h3 className="text-xl font-bold text-primary">
+                    {channel.title}
+                  </h3>
+                </div>
                 <p className="text-foreground mb-2">
                   <strong>Method:</strong> {channel.method}
                 </p>
@@ -174,7 +211,7 @@ export default function Contact() {
                   <strong>Contact:</strong> {channel.contact}
                 </p>
                 <p className="text-sm text-accent font-semibold">
-                  {channel.response}
+                  ⏱️ {channel.response}
                 </p>
               </div>
             ))}
@@ -190,22 +227,15 @@ export default function Contact() {
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+            {/* WhatsApp - Primary CTA */}
             <a
-              href="tel:+8801797321210"
-              className="flex items-center justify-center gap-3 px-8 py-4 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-all duration-300 hover:scale-105 shadow-lg"
-            >
-              <Phone size={20} />
-              Call Now
-            </a>
-
-            <a
-              href="https://wa.me/8801797321210"
+              href="https://wa.me/dr.afroza.bd"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-3 px-8 py-4 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-all duration-300 hover:scale-105 shadow-lg"
+              className="flex items-center justify-center gap-3 px-8 py-4 bg-green-600 text-white font-bold text-lg rounded-lg hover:bg-green-700 transition-all duration-300 hover:scale-105 shadow-lg md:col-span-2"
             >
-              <MessageCircle size={20} />
-              WhatsApp Chat
+              <MessageCircle size={24} />
+              💬 WhatsApp Chat (Recommended)
             </a>
 
             <a
@@ -214,6 +244,14 @@ export default function Contact() {
             >
               <Mail size={20} />
               Send Email
+            </a>
+
+            <a
+              href="tel:+880247811157"
+              className="flex items-center justify-center gap-3 px-8 py-4 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-all duration-300 hover:scale-105 shadow-lg"
+            >
+              <Phone size={20} />
+              Call RMCH
             </a>
 
             <a
@@ -233,27 +271,27 @@ export default function Contact() {
       <section className="py-16 md:py-24 bg-white">
         <div className="container">
           <div className="max-w-2xl mx-auto bg-primary text-white p-8 rounded-lg">
-            <h2 className="text-3xl font-bold mb-6">Response Time</h2>
+            <h2 className="text-3xl font-bold mb-6">Response Time & Availability</h2>
             <div className="space-y-4">
               <p>
                 I am committed to responding to all professional inquiries promptly. Expected response times:
               </p>
               <ul className="space-y-2 ml-4">
                 <li className="flex items-center gap-2">
-                  <span className="text-accent">•</span>
-                  <span>Emergency calls: Immediate</span>
+                  <span className="text-green-400">✓</span>
+                  <span><strong>WhatsApp messages:</strong> Within 1 hour</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-accent">•</span>
-                  <span>WhatsApp messages: Within 1 hour</span>
+                  <span className="text-green-400">✓</span>
+                  <span><strong>Email inquiries:</strong> Within 24 hours</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-accent">•</span>
-                  <span>Email inquiries: Within 24 hours</span>
+                  <span className="text-green-400">✓</span>
+                  <span><strong>Phone calls (RMCH):</strong> During office hours</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-accent">•</span>
-                  <span>Scheduled consultations: By appointment</span>
+                  <span className="text-green-400">✓</span>
+                  <span><strong>Emergency consultations:</strong> By appointment</span>
                 </li>
               </ul>
             </div>

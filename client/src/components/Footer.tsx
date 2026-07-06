@@ -58,8 +58,8 @@ export default function Footer() {
             <div className="space-y-3 text-sm">
               <div className="flex items-center gap-2">
                 <Phone size={16} className="text-accent" />
-                <a href="tel:+8801797321210" className="opacity-90 hover:text-accent transition-colors duration-300">
-                  +880 1797 321210
+                <a href="tel:+880247811157" className="opacity-90 hover:text-accent transition-colors duration-300">
+                  024-7811157 (RMCH)
                 </a>
               </div>
               <div className="flex items-center gap-2">
@@ -96,7 +96,7 @@ export default function Footer() {
       <div className="fixed bottom-6 right-6 flex flex-col gap-3 z-40">
         {/* WhatsApp Button */}
         <a
-          href="https://wa.me/8801797321210"
+          href="https://wa.me/dr.afroza.bd"
           target="_blank"
           rel="noopener noreferrer"
           className="w-14 h-14 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center text-white shadow-lg transition-all duration-300 hover:scale-110"
@@ -109,9 +109,9 @@ export default function Footer() {
 
         {/* Call Button */}
         <a
-          href="tel:+8801797321210"
+          href="tel:+880247811157"
           className="w-14 h-14 bg-blue-600 hover:bg-blue-700 rounded-full flex items-center justify-center text-white shadow-lg transition-all duration-300 hover:scale-110"
-          title="Call Dr. Afroza"
+          title="Call RMCH"
         >
           <Phone size={24} />
         </a>
