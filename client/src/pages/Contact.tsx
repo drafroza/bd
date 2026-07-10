@@ -24,7 +24,7 @@ export default function Contact() {
             Get in Touch
           </h1>
           <p className="text-xl opacity-90 max-w-2xl mx-auto">
-            Professional consultations and inquiries
+            MBBS, FCPS Part-I | BMDC Reg. No: 142636 | Jhalakathi Sadar, Jhalakathi, Bangladesh
           </p>
         </div>
       </section>
@@ -91,45 +91,20 @@ export default function Contact() {
               </p>
             </div>
 
-            {/* Phone - RMCH */}
-            <div className="bg-secondary-bg p-8 rounded-lg text-center hover:shadow-lg transition-all duration-300">
-              <Phone className="w-12 h-12 text-accent mx-auto mb-4" />
-              <h3 className="text-2xl font-bold text-primary mb-3">Phone (RMCH)</h3>
-              <a
-                href="tel:+880247811157"
-                className="text-lg text-foreground hover:text-accent transition-colors duration-300 font-semibold"
-              >
-                024-7811157
-              </a>
-              <p className="text-sm text-muted-foreground mt-2">
-                Rajshahi Medical College Hospital
-              </p>
-            </div>
+          {/* Location */}
+          <div className="bg-secondary-bg p-8 rounded-lg text-center hover:shadow-lg transition-all duration-300">
+            <MapPin className="w-12 h-12 text-accent mx-auto mb-4" />
+            <h3 className="text-2xl font-bold text-primary mb-3">Location</h3>
+            <p className="text-lg text-foreground font-semibold">
+              Jhalakathi Sadar, Jhalakathi, Bangladesh
+            </p>
+            <p className="text-sm text-muted-foreground mt-2">
+              Available for professional consultations
+            </p>
+          </div>
           </div>
 
-          {/* Location */}
-          <div className="bg-secondary-bg p-8 rounded-lg max-w-2xl mx-auto">
-            <div className="flex items-start gap-4">
-              <MapPin className="w-8 h-8 text-accent flex-shrink-0 mt-1" />
-              <div>
-                <h3 className="text-2xl font-bold text-primary mb-2">Location</h3>
-                <p className="text-lg text-foreground mb-4">
-                  Jhalakathi Sadar, Jhalakathi, Bangladesh
-                </p>
-                <p className="text-sm text-muted-foreground mb-4">
-                  Also affiliated with Rajshahi Medical College Hospital (RMCH)
-                </p>
-                <a
-                  href="https://www.google.com/maps/place/Rajshahi+Medical+College+Hospital,Rajshahi,+medical+college+road,+laxmipur,+6000/@24.3712881,88.5872372,17z/data=!4m6!3m5!1s0x39fbef02d4899947:0x6c5031675c0796a8!8m2!3d24.372019!4d88.5864259!16zL20vMDVqajYx?utm_campaign=ml-ardi&g_ep=Eg1tbF8yMDI2MDYyOV8wIOC7DCoASAJQAQ%3D%3D"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block px-6 py-2 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-all duration-300"
-                >
-                  View on Google Maps
-                </a>
-              </div>
-            </div>
-          </div>
+
         </div>
       </section>
 
@@ -183,18 +158,11 @@ export default function Contact() {
                 icon: '📧',
               },
               {
-                title: 'For Hospital Inquiries',
-                method: 'Phone (RMCH)',
-                contact: '024-7811157',
-                response: 'During office hours',
-                icon: '☎️',
-              },
-              {
                 title: 'For Detailed Discussions',
                 method: 'WhatsApp Call',
                 contact: 'wa.me/dr.afroza.bd',
                 response: 'By appointment',
-                icon: '📞',
+                icon: '\ud83d\udcde',
               },
             ].map((channel, idx) => (
               <div key={idx} className="bg-secondary-bg p-6 rounded-lg border-l-4 border-accent hover:shadow-lg transition-all duration-300">
@@ -246,23 +214,7 @@ export default function Contact() {
               Send Email
             </a>
 
-            <a
-              href="tel:+880247811157"
-              className="flex items-center justify-center gap-3 px-8 py-4 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-all duration-300 hover:scale-105 shadow-lg"
-            >
-              <Phone size={20} />
-              Call RMCH
-            </a>
 
-            <a
-              href="https://www.google.com/maps/place/Rajshahi+Medical+College+Hospital,Rajshahi,+medical+college+road,+laxmipur,+6000/@24.3712881,88.5872372,17z/data=!4m6!3m5!1s0x39fbef02d4899947:0x6c5031675c0796a8!8m2!3d24.372019!4d88.5864259!16zL20vMDVqajYx?utm_campaign=ml-ardi&g_ep=Eg1tbF8yMDI2MDYyOV8wIOC7DCoASAJQAQ%3D%3D"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-3 px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all duration-300 hover:scale-105 shadow-lg"
-            >
-              <MapPin size={20} />
-              View Location
-            </a>
           </div>
         </div>
       </section>
@@ -285,10 +237,7 @@ export default function Contact() {
                   <span className="text-green-400">✓</span>
                   <span><strong>Email inquiries:</strong> Within 24 hours</span>
                 </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-green-400">✓</span>
-                  <span><strong>Phone calls (RMCH):</strong> During office hours</span>
-                </li>
+
                 <li className="flex items-center gap-2">
                   <span className="text-green-400">✓</span>
                   <span><strong>Emergency consultations:</strong> By appointment</span>

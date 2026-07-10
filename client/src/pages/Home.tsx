@@ -24,8 +24,8 @@ export default function Home() {
   useEffect(() => {
     const targets = {
       patients: 500,
-      experience: 2,
-      awards: 5,
+      experience: 1.5,
+      awards: 4,
     };
 
     const duration = 2000; // 2 seconds
@@ -81,8 +81,11 @@ export default function Home() {
           <h1 className="text-5xl md:text-7xl font-bold mb-4 text-white">
             Dr. Mst. Afroza Akter Nishy
           </h1>
-          <p className="text-xl md:text-2xl mb-6 text-gray-100">
+          <p className="text-xl md:text-2xl mb-4 text-gray-100">
             MBBS, FCPS Part-I (Obstetrics & Gynaecology)
+          </p>
+          <p className="text-md mb-6 text-gray-200">
+            Registered Medical Practitioner | BMDC Reg. No: 142636
           </p>
           <p className="text-lg md:text-xl mb-8 text-gray-200 max-w-2xl mx-auto">
             Dedicated to advancing women's healthcare through evidence-based clinical practice, empathy, and continuous learning.
@@ -120,7 +123,7 @@ export default function Home() {
             {[
               { icon: Users, label: 'Patients Cared', value: counters.patients, suffix: '+' },
               { icon: Heart, label: 'Years of Experience', value: counters.experience, suffix: '+' },
-              { icon: Award, label: 'Awards & Recognition', value: counters.awards, suffix: '+' },
+              { icon: Award, label: 'Academic Awards', value: counters.awards, suffix: '+' },
             ].map((stat, idx) => {
               const Icon = stat.icon;
               return (
@@ -148,10 +151,10 @@ export default function Home() {
                 Professional Excellence in Women's Healthcare
               </h2>
               <p className="text-lg text-foreground mb-4">
-                I am Dr. Mst. Afroza Akter Nishy, a dedicated and compassionate medical professional with a solid academic foundation from Rajshahi Medical College. Currently specializing in Obstetrics & Gynaecology (FCPS Part-I), I am committed to advancing women's healthcare through evidence-based clinical practice, empathy, and continuous learning.
+                Dedicated and compassionate medical professional with a solid academic foundation from <strong>Rajshahi Medical College</strong>. Currently specializing in <strong>Obstetrics & Gynaecology</strong> (FCPS Part-I), I am committed to advancing women's healthcare through evidence-based clinical practice, empathy, and continuous learning.
               </p>
               <p className="text-lg text-foreground mb-8">
-                My journey in medicine began with a passion for understanding the complexities of women's health and providing compassionate care to every patient. Throughout my medical education and clinical training, I have developed a deep appreciation for the importance of patient-centered care, ethical practice, and ongoing professional development.
+                With hands-on clinical experience in maternal-fetal medicine, obstetric emergencies, and comprehensive women's healthcare — including a comprehensive 52-week clinical rotation at Rajshahi Medical College Hospital and part-time medical officer experience at Hitech Multicare Hospital — I am equipped to handle diverse medical situations with professionalism and compassion.
               </p>
               <a
                 href="/about"
@@ -184,18 +187,18 @@ export default function Home() {
             {[
               {
                 title: 'Clinical Experience',
-                description: 'Comprehensive hands-on experience in obstetrics, gynecology, and emergency medical care',
-                icon: '🏥',
+                description: 'Part-Time Medical Officer at Hitech Multicare Hospital & Intern at RMCH with 52-week clinical rotation',
+                icon: '\ud83c\udfe5',
               },
               {
                 title: 'Professional Qualifications',
-                description: 'MBBS from Rajshahi Medical College and FCPS Part-I specialization',
-                icon: '📜',
+                description: 'MBBS from Rajshahi Medical College and FCPS Part-I in Obstetrics & Gynaecology',
+                icon: '\ud83d\udcdc',
               },
               {
-                title: 'Patient-Centered Care',
-                description: 'Dedicated to providing compassionate, ethical, and evidence-based healthcare',
-                icon: '❤️',
+                title: '4+ Academic Awards',
+                description: 'Best Performer Award RMCH, DBBL Merit Scholarship, and Government Board Scholarships',
+                icon: '\ud83c\udfc6',
               },
             ].map((item, idx) => (
               <div key={idx} className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">

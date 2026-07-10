@@ -16,7 +16,7 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-bold mb-4 text-white">Dr. Afroza</h3>
             <p className="text-sm opacity-90 leading-relaxed">
-              Dedicated medical professional specializing in Obstetrics & Gynaecology with a commitment to evidence-based clinical practice and compassionate patient care.
+              MBBS, FCPS Part-I (Obstetrics & Gynaecology). Dedicated medical professional with a commitment to evidence-based clinical practice, empathy, and continuous learning.
             </p>
           </div>
 
@@ -58,8 +58,8 @@ export default function Footer() {
             <div className="space-y-3 text-sm">
               <div className="flex items-center gap-2">
                 <Phone size={16} className="text-accent" />
-                <a href="tel:+880247811157" className="opacity-90 hover:text-accent transition-colors duration-300">
-                  024-7811157 (RMCH)
+                <a href="https://wa.me/dr.afroza.bd" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:text-accent transition-colors duration-300">
+                  WhatsApp: wa.me/dr.afroza.bd
                 </a>
               </div>
               <div className="flex items-center gap-2">
@@ -107,11 +107,13 @@ export default function Footer() {
           </svg>
         </a>
 
-        {/* Call Button */}
+        {/* WhatsApp Call Button */}
         <a
-          href="tel:+880247811157"
+          href="https://wa.me/dr.afroza.bd"
+          target="_blank"
+          rel="noopener noreferrer"
           className="w-14 h-14 bg-blue-600 hover:bg-blue-700 rounded-full flex items-center justify-center text-white shadow-lg transition-all duration-300 hover:scale-110"
-          title="Call RMCH"
+          title="WhatsApp Call"
         >
           <Phone size={24} />
         </a>

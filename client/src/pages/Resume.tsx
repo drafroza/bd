@@ -23,7 +23,7 @@ export default function Resume() {
             Resume & Experience
           </h1>
           <p className="text-xl opacity-90 max-w-2xl mx-auto">
-            Professional qualifications and clinical experience
+            MBBS, FCPS Part-I | BMDC Reg. No: 142636 | Clinical Experience & Qualifications
           </p>
         </div>
       </section>
@@ -315,7 +315,7 @@ export default function Resume() {
             Interested in Professional Collaboration?
           </h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
-            Available for residency programs, medical officer positions, and professional consultations
+            Available for professional consultations, residency programs, and Medical Officer positions in the field of Obstetrics and Gynaecology
           </p>
           <a
             href="/contact"

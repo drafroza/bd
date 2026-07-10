@@ -22,7 +22,7 @@ export default function About() {
             About Me
           </h1>
           <p className="text-xl opacity-90 max-w-2xl mx-auto">
-            Professional Journey in Women&apos;s Healthcare
+            MBBS, FCPS Part-I (Obstetrics & Gynaecology) | BMDC Reg. No: 142636
           </p>
         </div>
       </section>
@@ -30,21 +30,33 @@ export default function About() {
       {/* Professional Biography */}
       <section className="py-16 md:py-24 bg-white">
         <div className="container">
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            {/* Image */}
+            <div>
+              <img
+                src="/manus-storage/Homepage and logo pic_42767fb2.jpg"
+                alt="Dr. Afroza Professional Portrait"
+                className="rounded-lg shadow-2xl w-full h-auto object-cover"
+              />
+            </div>
+
+            {/* Biography Content */}
+            <div>
             <h2 className="text-4xl font-bold text-primary mb-8">Professional Biography</h2>
             <div className="space-y-6 text-lg text-foreground leading-relaxed">
               <p>
-                I am Dr. Mst. Afroza Akter Nishy, a dedicated and compassionate medical professional with a solid academic foundation from <strong>Rajshahi Medical College</strong>. Currently specializing in <strong>Obstetrics & Gynaecology</strong> (FCPS Part-I), I am committed to advancing women&apos;s healthcare through evidence-based clinical practice, empathy, and continuous learning.
+                Dedicated and compassionate medical professional with a solid academic foundation from <strong>Rajshahi Medical College</strong>. Currently specializing in <strong>Obstetrics & Gynaecology</strong> (FCPS Part-I), I am committed to advancing women&apos;s healthcare through evidence-based clinical practice, empathy, and continuous learning.
               </p>
               <p>
-                My journey in medicine began with a passion for understanding the complexities of women&apos;s health and providing compassionate care to every patient. Throughout my medical education and clinical training, I have developed a deep appreciation for the importance of patient-centered care, ethical practice, and ongoing professional development.
+                My clinical experience includes serving as a <strong>Part-Time Medical Officer</strong> at <strong>Hitech Multicare Hospital Limited</strong> (Dhaka Cantonment, October 2025 – April 2026), where I managed outdoor and indoor patient departments, provided primary and emergency medical care, and assisted senior consultants in clinical rounds. I also completed a comprehensive <strong>52-week clinical rotation</strong> as an <strong>Intern Doctor</strong> at <strong>Rajshahi Medical College Hospital (RMCH)</strong> (July 2024 – July 2025) with an &ldquo;Overall Very Good&rdquo; performance rating.
               </p>
               <p>
-                With hands-on clinical experience in maternal-fetal medicine, obstetric emergencies, and comprehensive women&apos;s healthcare, I am equipped to handle diverse medical situations with professionalism and compassion. My training at Rajshahi Medical College Hospital has provided me with the skills and knowledge necessary to deliver high-quality medical services.
+                Throughout my medical education and clinical training, I have developed a deep appreciation for the importance of patient-centered care, ethical practice, and ongoing professional development. I am equipped to handle diverse medical situations with professionalism and compassion.
               </p>
               <p>
                 <strong>BMDC Registration No: 142636</strong> - Registered Medical Practitioner committed to maintaining the highest standards of medical ethics and professional conduct.
               </p>
+            </div>
             </div>
           </div>
         </div>
@@ -194,7 +206,7 @@ export default function About() {
             Let&apos;s Connect
           </h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
-            Interested in discussing healthcare, professional opportunities, or collaborations?
+            Available for professional consultations, residency programs, and Medical Officer positions in Obstetrics and Gynaecology.
           </p>
           <a
             href="/contact"
