@@ -34,7 +34,7 @@ export default function About() {
             {/* Image */}
             <div>
               <img
-                src="/manus-storage/Homepage and logo pic_42767fb2.jpg"
+                src="/images/homepage-logo.jpg"
                 alt="Dr. Afroza Professional Portrait"
                 className="rounded-lg shadow-2xl w-full h-auto object-cover"
               />
