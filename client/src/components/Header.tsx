@@ -6,6 +6,7 @@ import { Link } from 'wouter';
  * Design: Elegant Healthcare Luxury
  * Header with navigation, logo, and mobile menu
  * Deep blue background with golden accents
+ * Updated: Hamburger menu now visible on all screen sizes (desktop + mobile)
  */
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -50,26 +51,10 @@ export default function Header() {
           </a>
         </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8">
-          {navItems.map((item) => (
-            <Link key={item.href} href={item.href}>
-              <a
-                className={`font-medium transition-all duration-300 relative group ${
-                  isScrolled ? 'text-foreground' : 'text-white'
-                }`}
-              >
-                {item.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full" />
-              </a>
-            </Link>
-          ))}
-        </nav>
-
-        {/* Mobile Menu Button */}
+        {/* Hamburger Menu Button - Always Visible */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className={`md:hidden p-2 rounded-lg transition-all duration-300 ${
+          className={`p-2 rounded-lg transition-all duration-300 ${
             isScrolled
               ? 'text-foreground bg-gray-100'
               : 'text-white bg-white/10'
@@ -79,23 +64,25 @@ export default function Header() {
         </button>
       </div>
 
-      {/* Mobile Navigation */}
-      {isOpen && (
-        <nav className="md:hidden bg-white shadow-lg">
-          <div className="container py-4 flex flex-col gap-4">
-            {navItems.map((item) => (
-              <Link key={item.href} href={item.href}>
-                <a
-                  className="text-foreground font-medium hover:text-accent transition-colors duration-300 py-2"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item.label}
-                </a>
-              </Link>
-            ))}
-          </div>
-        </nav>
-      )}
+      {/* Navigation Menu - Opens/Closes with Smooth Animation */}
+      <nav
+        className={`overflow-hidden transition-all duration-300 ease-in-out ${
+          isOpen ? 'max-h-96' : 'max-h-0'
+        } ${isScrolled ? 'bg-white shadow-lg' : 'bg-white/95 backdrop-blur-md shadow-lg'}`}
+      >
+        <div className="container py-4 flex flex-col gap-4">
+          {navItems.map((item) => (
+            <Link key={item.href} href={item.href}>
+              <a
+                className="text-foreground font-medium hover:text-accent transition-colors duration-300 py-2"
+                onClick={() => setIsOpen(false)}
+              >
+                {item.label}
+              </a>
+            </Link>
+          ))}
+        </div>
+      </nav>
     </header>
   );
 }
