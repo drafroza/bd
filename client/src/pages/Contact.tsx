@@ -23,7 +23,7 @@ export default function Contact() {
           <h1 className="text-5xl md:text-6xl font-bold mb-4 text-white">
             Get in Touch
           </h1>
-          <p className="text-xl opacity-90 max-w-2xl mx-auto">
+          <p className="text-xl text-white/90 max-w-2xl mx-auto">
             MBBS, FCPS Part-I | BMDC Reg. No: 142636 | Jhalakathi Sadar, Jhalakathi, Bangladesh
           </p>
         </div>

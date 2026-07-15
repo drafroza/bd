@@ -81,13 +81,13 @@ export default function Home() {
           <h1 className="text-5xl md:text-7xl font-bold mb-4 text-white">
             Dr. Mst. Afroza Akter Nishy
           </h1>
-          <p className="text-xl md:text-2xl mb-4 text-gray-100">
+          <p className="text-xl md:text-2xl mb-4 text-white/90">
             MBBS, FCPS Part-I (Obstetrics & Gynaecology)
           </p>
-          <p className="text-md mb-6 text-gray-200">
+          <p className="text-md mb-6 text-white/90">
             Registered Medical Practitioner | BMDC Reg. No: 142636
           </p>
-          <p className="text-lg md:text-xl mb-8 text-gray-200 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl mb-8 text-white/90 max-w-2xl mx-auto">
             Dedicated to advancing women's healthcare through evidence-based clinical practice, empathy, and continuous learning.
           </p>
 
@@ -133,7 +133,7 @@ export default function Home() {
                     {stat.value}
                     {stat.suffix}
                   </p>
-                  <p className="text-lg text-gray-100">{stat.label}</p>
+                  <p className="text-lg text-white/90">{stat.label}</p>
                 </div>
               );
             })}

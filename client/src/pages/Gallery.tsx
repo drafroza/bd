@@ -55,7 +55,7 @@ export default function Gallery() {
           <h1 className="text-5xl md:text-6xl font-bold mb-4 text-white">
             Gallery
           </h1>
-          <p className="text-xl opacity-90 max-w-2xl mx-auto">
+          <p className="text-xl text-white/90 max-w-2xl mx-auto">
             Professional photos and medical activities
           </p>
         </div>
@@ -175,7 +175,7 @@ export default function Gallery() {
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Want to Collaborate?
           </h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
+          <p className="text-xl mb-8 max-w-2xl mx-auto text-white/90">
             Interested in medical photography, documentation, or professional collaborations?
           </p>
           <a
