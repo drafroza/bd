@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { Award, BookOpen, Briefcase, Star } from 'lucide-react';
+import { Award, BookOpen, Briefcase, Star, Download } from 'lucide-react';
 
 /**
  * Design: Elegant Healthcare Luxury
@@ -22,9 +22,17 @@ export default function Resume() {
           <h1 className="text-5xl md:text-6xl font-bold mb-4 text-white">
             Resume & Experience
           </h1>
-          <p className="text-xl text-white/90 max-w-2xl mx-auto">
+          <p className="text-xl text-white/90 max-w-2xl mx-auto mb-8">
             MBBS, FCPS Part-I | BMDC Reg. No: 142636 | Clinical Experience & Qualifications
           </p>
+          <a
+            href="/CV-Dr.Afroza.pdf"
+            download="CV-Dr.Afroza.pdf"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-accent text-primary font-semibold rounded-lg hover:bg-accent/90 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+          >
+            <Download className="w-5 h-5" />
+            Download CV
+          </a>
         </div>
       </section>
 
