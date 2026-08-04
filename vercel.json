@@ -2,13 +2,11 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist/public",
   "framework": "vite",
+  "cleanUrls": false,
+  "trailingSlash": false,
   "rewrites": [
     {
-      "source": "/google852464f871fe3c75.html",
-      "destination": "/google852464f871fe3c75.html"
-    },
-    {
-      "source": "/(.*)",
+      "source": "/((?!google852464f871fe3c75\\.html|robots\\.txt|sitemap\\.xml|CV-Dr\\.Afroza\\.pdf).*)",
       "destination": "/index.html"
     }
   ]
