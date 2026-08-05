@@ -18,7 +18,22 @@ async function startServer() {
 
   app.use(express.static(staticPath));
 
-  // Handle client-side routing - serve index.html for all routes
+  // Serve Google Search Console verification file directly
+  app.get("/google852464f871fe3c75.html", (_req, res) => {
+    res.type("text/html").send("google-site-verification: google852464f871fe3c75.html");
+  });
+
+  // Serve robots.txt directly
+  app.get("/robots.txt", (_req, res) => {
+    res.sendFile(path.join(staticPath, "robots.txt"));
+  });
+
+  // Serve sitemap.xml directly
+  app.get("/sitemap.xml", (_req, res) => {
+    res.sendFile(path.join(staticPath, "sitemap.xml"));
+  });
+
+  // Handle client-side routing - serve index.html for all other routes
   app.get("*", (_req, res) => {
     res.sendFile(path.join(staticPath, "index.html"));
   });
