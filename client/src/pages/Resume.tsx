@@ -326,7 +326,7 @@ export default function Resume() {
             Available for professional consultations, residency programs, and Medical Officer positions in the field of Obstetrics and Gynaecology
           </p>
           <a
-            href="/contact"
+            href="#/contact"
             className="inline-block px-8 py-4 bg-accent text-primary font-semibold rounded-lg hover:bg-accent/90 transition-all duration-300 hover:scale-105 shadow-lg"
           >
             Contact Me

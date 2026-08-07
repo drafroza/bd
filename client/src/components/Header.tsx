@@ -15,11 +15,11 @@ export default function Header() {
   }, []);
 
   const navItems = [
-    { label: 'Home', href: '/' },
-    { label: 'About', href: '/about' },
-    { label: 'Resume', href: '/resume' },
-    { label: 'Gallery', href: '/gallery' },
-    { label: 'Contact', href: '/contact' },
+    { label: 'Home', href: '#/' },
+    { label: 'About', href: '#/about' },
+    { label: 'Resume', href: '#/resume' },
+    { label: 'Gallery', href: '#/gallery' },
+    { label: 'Contact', href: '#/contact' },
   ];
 
   return (
@@ -32,7 +32,7 @@ export default function Header() {
     >
       <div className="container flex items-center justify-between py-3 md:py-4">
         {/* Logo */}
-        <Link href="/">
+        <Link href="#/">
           <a className="flex items-center gap-2.5 group">
             <img
               src="/images/homepage-logo.jpg"

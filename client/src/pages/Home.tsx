@@ -94,13 +94,13 @@ export default function Home() {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="/contact"
+              href="#/contact"
               className="px-8 py-4 bg-accent text-primary font-semibold rounded-lg hover:bg-accent/90 transition-all duration-300 hover:scale-105 shadow-lg"
             >
               Get in Touch
             </a>
             <a
-              href="#services"
+              href="#/"
               className="px-8 py-4 bg-white/20 text-white font-semibold rounded-lg hover:bg-white/30 transition-all duration-300 hover:scale-105 shadow-lg border border-white/30"
             >
               Learn More
@@ -157,7 +157,7 @@ export default function Home() {
                 With hands-on clinical experience in maternal-fetal medicine, obstetric emergencies, and comprehensive women's healthcare — including a comprehensive 52-week clinical rotation at Rajshahi Medical College Hospital and part-time medical officer experience at Hitech Multicare Hospital — I am equipped to handle diverse medical situations with professionalism and compassion.
               </p>
               <a
-                href="/about"
+                href="#/about"
                 className="inline-block px-8 py-4 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-all duration-300 hover:scale-105 shadow-lg"
               >
                 Read Full Biography
@@ -222,13 +222,13 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="/contact"
+              href="#/contact"
               className="px-8 py-4 bg-accent text-primary font-semibold rounded-lg hover:bg-accent/90 transition-all duration-300 hover:scale-105 shadow-lg"
             >
               Contact Me
             </a>
             <a
-              href="/resume"
+              href="#/resume"
               className="px-8 py-4 bg-white/20 text-white font-semibold rounded-lg hover:bg-white/30 transition-all duration-300 hover:scale-105 shadow-lg border border-white/30"
             >
               View Resume

@@ -21,27 +21,27 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-4 text-white">Quick Links</h4>
             <ul className="space-y-2.5 text-sm">
               <li>
-                <a href="/" className="opacity-90 hover:text-accent transition-colors duration-300 inline-flex items-center gap-1 group">
+                <a href="#/" className="opacity-90 hover:text-accent transition-colors duration-300 inline-flex items-center gap-1 group">
                   <span className="w-0 group-hover:w-2 h-px bg-accent transition-all duration-300" /> Home
                 </a>
               </li>
               <li>
-                <a href="/about" className="opacity-90 hover:text-accent transition-colors duration-300 inline-flex items-center gap-1 group">
+                <a href="#/about" className="opacity-90 hover:text-accent transition-colors duration-300 inline-flex items-center gap-1 group">
                   <span className="w-0 group-hover:w-2 h-px bg-accent transition-all duration-300" /> About
                 </a>
               </li>
               <li>
-                <a href="/resume" className="opacity-90 hover:text-accent transition-colors duration-300 inline-flex items-center gap-1 group">
+                <a href="#/resume" className="opacity-90 hover:text-accent transition-colors duration-300 inline-flex items-center gap-1 group">
                   <span className="w-0 group-hover:w-2 h-px bg-accent transition-all duration-300" /> Resume
                 </a>
               </li>
               <li>
-                <a href="/gallery" className="opacity-90 hover:text-accent transition-colors duration-300 inline-flex items-center gap-1 group">
+                <a href="#/gallery" className="opacity-90 hover:text-accent transition-colors duration-300 inline-flex items-center gap-1 group">
                   <span className="w-0 group-hover:w-2 h-px bg-accent transition-all duration-300" /> Gallery
                 </a>
               </li>
               <li>
-                <a href="/contact" className="opacity-90 hover:text-accent transition-colors duration-300 inline-flex items-center gap-1 group">
+                <a href="#/contact" className="opacity-90 hover:text-accent transition-colors duration-300 inline-flex items-center gap-1 group">
                   <span className="w-0 group-hover:w-2 h-px bg-accent transition-all duration-300" /> Contact
                 </a>
               </li>
