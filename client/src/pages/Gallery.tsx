@@ -19,7 +19,7 @@ export default function Gallery() {
       id: 1,
       title: 'Professional Portrait',
       category: 'Professional',
-      image: '/manus-storage/Homepage and logo pic_42767fb2.jpg',
+      image: '/images/homepage-logo.jpg',
       description: 'Professional medical practitioner portrait',
     },
     {
