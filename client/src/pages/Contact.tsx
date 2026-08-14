@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Mail, MapPin, MessageCircle, Send, Heart, ExternalLink, CheckCircle } from 'lucide-react';
+import { Mail, MapPin, MessageCircle, Send, Heart, ExternalLink, Loader2, CheckCircle2, AlertCircle } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
@@ -10,9 +10,9 @@ export default function Contact() {
     subject: '',
     message: ''
   });
-  const [isSending, setIsSending] = useState(false);
-  const [isSent, setIsSent] = useState(false);
-  const [error, setError] = useState('');
+
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -21,8 +21,25 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSending(true);
-    setError('');
+    setStatus('loading');
+    setErrorMessage('');
+
+    const SERVICE_ID = 'Dr. Afroza';
+    const TEMPLATE_ID = 'template_bepn5rr';
+    const PUBLIC_KEY = 'yFmI7r18v10dPWi2H';
+
+    const data = {
+      service_id: SERVICE_ID,
+      template_id: TEMPLATE_ID,
+      user_id: PUBLIC_KEY,
+      template_params: {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        to_name: 'Dr. Afroza',
+      },
+    };
 
     try {
       const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
@@ -30,32 +47,22 @@ export default function Contact() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          service_id: 'Dr. Afroza',
-          template_id: 'template_bepn5rr',
-          user_id: 'yFmI7r18v10dPWi2H',
-          template_params: {
-            name: formData.name,
-            email: formData.email,
-            subject: formData.subject,
-            message: formData.message,
-          }
-        })
+        body: JSON.stringify(data),
       });
 
       if (response.ok) {
-        setIsSending(false);
-        setIsSent(true);
+        setStatus('success');
         setFormData({ name: '', email: '', subject: '', message: '' });
-        setTimeout(() => setIsSent(false), 5000);
+        // Reset success message after 5 seconds
+        setTimeout(() => setStatus('idle'), 5000);
       } else {
         const errorText = await response.text();
-        throw new Error(errorText);
+        throw new Error(errorText || 'Failed to send message');
       }
-    } catch (err) {
-      setIsSending(false);
-      setError('ইমেইল পাঠাতে সমস্যা হয়েছে। আবার চেষ্টা করুন।');
-      console.error('EmailJS Error:', err);
+    } catch (error: any) {
+      console.error('EmailJS Error:', error);
+      setStatus('error');
+      setErrorMessage(error.message || 'Something went wrong. Please try again later.');
     }
   };
 
@@ -77,7 +84,7 @@ export default function Contact() {
       <section className="py-16 md:py-24">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 max-w-6xl mx-auto">
-
+            
             {/* Left Column: Contact Methods */}
             <div className="space-y-8">
               <div>
@@ -141,16 +148,17 @@ export default function Contact() {
                 Share your thoughts, suggestions, or professional inquiries. Your feedback is valuable.
               </p>
 
-              {isSent && (
-                <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center gap-3 text-green-700">
-                  <CheckCircle size={20} />
-                  <span>আপনার মেসেজ সফলভাবে পাঠানো হয়েছে!</span>
+              {status === 'success' && (
+                <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center gap-3 text-green-700 animate-in fade-in slide-in-from-top-1">
+                  <CheckCircle2 size={20} className="flex-shrink-0" />
+                  <p className="text-sm font-medium">Message sent successfully! I will get back to you soon.</p>
                 </div>
               )}
 
-              {error && (
-                <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">
-                  {error}
+              {status === 'error' && (
+                <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center gap-3 text-red-700 animate-in fade-in slide-in-from-top-1">
+                  <AlertCircle size={20} className="flex-shrink-0" />
+                  <p className="text-sm font-medium">{errorMessage}</p>
                 </div>
               )}
 
@@ -165,7 +173,8 @@ export default function Contact() {
                     onChange={handleChange}
                     placeholder="Enter your full name"
                     required
-                    className="w-full px-4 py-3 rounded-lg border border-primary/10 focus:outline-none focus:ring-2 focus:ring-accent/50 bg-secondary/10 transition-all"
+                    disabled={status === 'loading'}
+                    className="w-full px-4 py-3 rounded-lg border border-primary/10 focus:outline-none focus:ring-2 focus:ring-accent/50 bg-secondary/10 transition-all disabled:opacity-50"
                   />
                 </div>
                 <div className="space-y-2">
@@ -178,7 +187,8 @@ export default function Contact() {
                     onChange={handleChange}
                     placeholder="Enter your email address"
                     required
-                    className="w-full px-4 py-3 rounded-lg border border-primary/10 focus:outline-none focus:ring-2 focus:ring-accent/50 bg-secondary/10 transition-all"
+                    disabled={status === 'loading'}
+                    className="w-full px-4 py-3 rounded-lg border border-primary/10 focus:outline-none focus:ring-2 focus:ring-accent/50 bg-secondary/10 transition-all disabled:opacity-50"
                   />
                 </div>
                 <div className="space-y-2">
@@ -191,7 +201,8 @@ export default function Contact() {
                     onChange={handleChange}
                     placeholder="What is this regarding?"
                     required
-                    className="w-full px-4 py-3 rounded-lg border border-primary/10 focus:outline-none focus:ring-2 focus:ring-accent/50 bg-secondary/10 transition-all"
+                    disabled={status === 'loading'}
+                    className="w-full px-4 py-3 rounded-lg border border-primary/10 focus:outline-none focus:ring-2 focus:ring-accent/50 bg-secondary/10 transition-all disabled:opacity-50"
                   />
                 </div>
                 <div className="space-y-2">
@@ -203,18 +214,20 @@ export default function Contact() {
                     onChange={handleChange}
                     placeholder="Write your message here..."
                     required
+                    disabled={status === 'loading'}
                     rows={4}
-                    className="w-full px-4 py-3 rounded-lg border border-primary/10 focus:outline-none focus:ring-2 focus:ring-accent/50 bg-secondary/10 transition-all resize-none"
+                    className="w-full px-4 py-3 rounded-lg border border-primary/10 focus:outline-none focus:ring-2 focus:ring-accent/50 bg-secondary/10 transition-all resize-none disabled:opacity-50"
                   />
                 </div>
+
                 <button
                   type="submit"
-                  disabled={isSending}
-                  className="w-full py-4 bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-all duration-300 shadow-lg flex items-center justify-center gap-2 group disabled:opacity-60 disabled:cursor-not-allowed"
+                  disabled={status === 'loading'}
+                  className="w-full py-4 bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-all duration-300 shadow-lg flex items-center justify-center gap-2 group disabled:opacity-70 disabled:cursor-not-allowed"
                 >
-                  {isSending ? (
+                  {status === 'loading' ? (
                     <>
-                      <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                      <Loader2 size={18} className="animate-spin" />
                       Sending...
                     </>
                   ) : (
