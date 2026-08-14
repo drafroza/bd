@@ -259,7 +259,7 @@ export default function Contact() {
 
       <Footer />
       <div className="text-center pb-2 opacity-20">
-        <p className="text-[8px] text-muted-foreground uppercase tracking-widest">Build Version : ghpwt6dpkxi5x3mpvv2l4n73nyhk2z3n</p>
+        <p className="text-[8px] text-muted-foreground uppercase tracking-widest">Build Version : ghpwt6dpkxi5x3mpvv2l4n73nyhk2z3n-v2</p>
       </div>
     </div>
   );
