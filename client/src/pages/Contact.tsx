@@ -1,11 +1,9 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { Mail, MapPin, MessageCircle, Send, Heart, ExternalLink, CheckCircle } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import emailjs from '@emailjs/browser';
 
 export default function Contact() {
-  const formRef = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -21,28 +19,44 @@ export default function Contact() {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSending(true);
     setError('');
 
-    // EmailJS Configuration
-    const SERVICE_ID = 'Dr. Afroza';
-    const TEMPLATE_ID = 'template_bepn5rr';
-    const PUBLIC_KEY = 'yFmI7r18v10dPWi2H';
+    try {
+      const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          service_id: 'Dr. Afroza',
+          template_id: 'template_bepn5rr',
+          user_id: 'yFmI7r18v10dPWi2H',
+          template_params: {
+            name: formData.name,
+            email: formData.email,
+            subject: formData.subject,
+            message: formData.message,
+          }
+        })
+      });
 
-    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current!, PUBLIC_KEY)
-      .then(() => {
+      if (response.ok) {
         setIsSending(false);
         setIsSent(true);
         setFormData({ name: '', email: '', subject: '', message: '' });
         setTimeout(() => setIsSent(false), 5000);
-      })
-      .catch((err) => {
-        setIsSending(false);
-        setError('ইমেইল পাঠাতে সমস্যা হয়েছে। আবার চেষ্টা করুন।');
-        console.error('EmailJS Error:', err);
-      });
+      } else {
+        const errorText = await response.text();
+        throw new Error(errorText);
+      }
+    } catch (err) {
+      setIsSending(false);
+      setError('ইমেইল পাঠাতে সমস্যা হয়েছে। আবার চেষ্টা করুন।');
+      console.error('EmailJS Error:', err);
+    }
   };
 
   return (
@@ -140,7 +154,7 @@ export default function Contact() {
                 </div>
               )}
 
-              <form ref={formRef} onSubmit={handleSubmit} className="space-y-5">
+              <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="space-y-2">
                   <label htmlFor="name" className="text-sm font-semibold text-primary">Your Name</label>
                   <input
