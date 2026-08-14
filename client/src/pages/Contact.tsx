@@ -1,15 +1,20 @@
-import { useState } from 'react';
-import { Mail, MapPin, MessageCircle, Send, Heart, ExternalLink } from 'lucide-react';
+import { useState, useRef } from 'react';
+import { Mail, MapPin, MessageCircle, Send, Heart, ExternalLink, CheckCircle } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import emailjs from '@emailjs/browser';
 
 export default function Contact() {
+  const formRef = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     subject: '',
     message: ''
   });
+  const [isSending, setIsSending] = useState(false);
+  const [isSent, setIsSent] = useState(false);
+  const [error, setError] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -18,14 +23,26 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Construct mailto link
-    const mailtoLink = `mailto:drafroza99@gmail.com?subject=${encodeURIComponent(formData.subject || 'Feedback from Website')}&body=${encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-    )}`;
-    
-    // Open the user's email client
-    window.location.href = mailtoLink;
+    setIsSending(true);
+    setError('');
+
+    // EmailJS Configuration
+    const SERVICE_ID = 'Dr. Afroza';
+    const TEMPLATE_ID = 'template_bepn5rr';
+    const PUBLIC_KEY = 'yFmI7r18v10dPWi2H';
+
+    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current!, PUBLIC_KEY)
+      .then(() => {
+        setIsSending(false);
+        setIsSent(true);
+        setFormData({ name: '', email: '', subject: '', message: '' });
+        setTimeout(() => setIsSent(false), 5000);
+      })
+      .catch((err) => {
+        setIsSending(false);
+        setError('ইমেইল পাঠাতে সমস্যা হয়েছে। আবার চেষ্টা করুন।');
+        console.error('EmailJS Error:', err);
+      });
   };
 
   return (
@@ -46,7 +63,7 @@ export default function Contact() {
       <section className="py-16 md:py-24">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 max-w-6xl mx-auto">
-            
+
             {/* Left Column: Contact Methods */}
             <div className="space-y-8">
               <div>
@@ -110,7 +127,20 @@ export default function Contact() {
                 Share your thoughts, suggestions, or professional inquiries. Your feedback is valuable.
               </p>
 
-              <form onSubmit={handleSubmit} className="space-y-5">
+              {isSent && (
+                <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center gap-3 text-green-700">
+                  <CheckCircle size={20} />
+                  <span>আপনার মেসেজ সফলভাবে পাঠানো হয়েছে!</span>
+                </div>
+              )}
+
+              {error && (
+                <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">
+                  {error}
+                </div>
+              )}
+
+              <form ref={formRef} onSubmit={handleSubmit} className="space-y-5">
                 <div className="space-y-2">
                   <label htmlFor="name" className="text-sm font-semibold text-primary">Your Name</label>
                   <input
@@ -165,10 +195,20 @@ export default function Contact() {
                 </div>
                 <button
                   type="submit"
-                  className="w-full py-4 bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-all duration-300 shadow-lg flex items-center justify-center gap-2 group"
+                  disabled={isSending}
+                  className="w-full py-4 bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-all duration-300 shadow-lg flex items-center justify-center gap-2 group disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  Send Message
-                  <Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                  {isSending ? (
+                    <>
+                      <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      Send Message
+                      <Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                    </>
+                  )}
                 </button>
               </form>
             </div>
