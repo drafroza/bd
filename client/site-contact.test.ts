@@ -1,53 +1,41 @@
 import { readFileSync } from 'node:fs';
-import { join } from 'node:path';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { describe, expect, it } from 'vitest';
 
+const clientRoot = dirname(fileURLToPath(import.meta.url));
 const readClientFile = (relativePath: string) =>
-  readFileSync(join(process.cwd(), relativePath), 'utf8');
+  readFileSync(join(clientRoot, relativePath), 'utf8');
 
-describe('site contact details', () => {
-  it('keeps the exact telephone link in the shared header and footer', () => {
-    const header = readClientFile('client/src/components/Header.tsx');
-    const footer = readClientFile('client/src/components/Footer.tsx');
+describe('Contact-only phone update', () => {
+  it('keeps the restored Header and Footer free of phone UI', () => {
+    const header = readClientFile('src/components/Header.tsx');
+    const footer = readClientFile('src/components/Footer.tsx');
 
-    expect(header).toContain('href="tel:+8801353187063"');
-    expect(header).toContain('+8801353187063');
-    expect(footer).toContain('href="tel:+8801353187063"');
-    expect(footer).toContain('+8801353187063');
+    expect(header).not.toContain('tel:+8801353187063');
+    expect(header).not.toContain('+8801353187063');
+    expect(footer).not.toContain('tel:+8801353187063');
+    expect(footer).not.toContain('+8801353187063');
   });
 
-  it('keeps the exact telephone link on the Contact page', () => {
-    const contact = readClientFile('client/src/pages/Contact.tsx');
+  it('keeps exactly one accessible telephone link on the restored Contact page', () => {
+    const contact = readClientFile('src/pages/Contact.tsx');
 
-    expect(contact).toContain("const phoneHref = 'tel:+8801353187063';");
-    expect(contact).toContain("const phoneNumber = '+8801353187063';");
-    expect(contact).toContain('href={phoneHref}');
+    expect(contact.match(/href="tel:\+8801353187063"/g)).toHaveLength(1);
+    expect(contact).toContain('+8801353187063');
+    expect(contact).toContain('aria-label="Call +8801353187063"');
   });
 
   it('does not introduce WhatsApp-specific UI', () => {
-    const sharedAndContact = [
-      'client/src/components/Header.tsx',
-      'client/src/components/Footer.tsx',
-      'client/src/pages/Contact.tsx',
+    const siteFiles = [
+      'src/components/Header.tsx',
+      'src/components/Footer.tsx',
+      'src/pages/Contact.tsx',
     ]
       .map(readClientFile)
       .join('\n')
       .toLowerCase();
 
-    expect(sharedAndContact).not.toContain('whatsapp');
-  });
-
-  it('exposes keyboard and screen-reader affordances for the contact links', () => {
-    const header = readClientFile('client/src/components/Header.tsx');
-    const footer = readClientFile('client/src/components/Footer.tsx');
-    const contact = readClientFile('client/src/pages/Contact.tsx');
-
-    expect(header).toContain('aria-label="Call +8801353187063"');
-    expect(header).toContain('aria-expanded={isOpen}');
-    expect(header).toContain('focus-visible:outline');
-    expect(footer).toContain('aria-label="Call +8801353187063"');
-    expect(footer).toContain('focus-visible:outline');
-    expect(contact).toContain('aria-label={`Call ${phoneNumber}`}');
-    expect(contact).toContain('focus-visible:outline');
+    expect(siteFiles).not.toContain('whatsapp');
   });
 });

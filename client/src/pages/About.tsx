@@ -12,14 +12,18 @@ export default function About() {
   }, []);
 
   return (
-    <div className="flex min-h-screen flex-col bg-white">
+    <div className="min-h-screen flex flex-col bg-background">
       <Header />
 
       {/* Hero Section */}
-      <section className="border-b border-black bg-white pb-16 pt-32 md:pb-24 md:pt-44">
-        <div className="container grid grid-cols-1 gap-8 md:grid-cols-[0.7fr_1fr] md:items-end md:gap-16">
-          <p className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-[#e30613]"><span className="mr-3 inline-block h-3 w-3 bg-[#e30613]" aria-hidden="true" />02 / About</p>
-          <div><h1 className="max-w-4xl text-6xl font-black leading-[0.9] tracking-[-0.08em] text-[#111111] md:text-8xl">A practice built on precision and empathy.</h1><p className="mt-7 max-w-xl border-l-2 border-[#e30613] pl-5 text-sm leading-7 text-[#4b4b4b]">MBBS, FCPS Part-I (Obstetrics &amp; Gynaecology) · BMDC Reg. No: 142636</p></div>
+      <section className="relative w-full py-24 md:py-32 bg-gradient-to-r from-primary to-primary/80 text-white mt-20">
+        <div className="container text-center">
+          <h1 className="text-5xl md:text-6xl font-bold mb-4 text-white">
+            About Me
+          </h1>
+          <p className="text-xl text-white/90 max-w-2xl mx-auto">
+            MBBS, FCPS Part-I (Obstetrics & Gynaecology) | BMDC Reg. No: 142636
+          </p>
         </div>
       </section>
 
@@ -32,7 +36,7 @@ export default function About() {
               <img
                 src="/images/homepage-logo.jpg"
                 alt="Dr. Afroza Professional Portrait"
-                className="w-full border border-black grayscale"
+                className="rounded-lg shadow-2xl w-full h-auto object-cover"
               />
             </div>
 
@@ -63,7 +67,7 @@ export default function About() {
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Mission */}
-            <div className="border border-black bg-white p-8 transition-colors duration-200 hover:bg-[#f4f4f4]">
+            <div className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
               <h3 className="text-2xl font-bold text-primary mb-4">Mission</h3>
               <p className="text-foreground leading-relaxed">
                 To provide compassionate, evidence-based medical care to women at all stages of life, with a commitment to improving maternal and reproductive health outcomes through clinical excellence, patient education, and continuous professional development.
@@ -71,7 +75,7 @@ export default function About() {
             </div>
 
             {/* Vision */}
-            <div className="border border-black bg-white p-8 transition-colors duration-200 hover:bg-[#f4f4f4]">
+            <div className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
               <h3 className="text-2xl font-bold text-primary mb-4">Vision</h3>
               <p className="text-foreground leading-relaxed">
                 To be a trusted healthcare provider known for delivering high-quality obstetric and gynecological care, advancing women&apos;s health through research and innovation, and contributing to the development of healthcare systems in Bangladesh.
@@ -79,7 +83,7 @@ export default function About() {
             </div>
 
             {/* Career Objective */}
-            <div className="border border-black bg-white p-8 transition-colors duration-200 hover:bg-[#f4f4f4]">
+            <div className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
               <h3 className="text-2xl font-bold text-primary mb-4">Career Objective</h3>
               <p className="text-foreground leading-relaxed">
                 To pursue specialized training in Obstetrics & Gynaecology, establish a successful medical practice, and contribute to advancing women&apos;s healthcare through clinical expertise, research, and community engagement.
@@ -116,7 +120,7 @@ export default function About() {
                 description: 'Capable of understanding medical literature',
               },
             ].map((item, idx) => (
-              <div key={idx} className="border-l-2 border-[#e30613] bg-[#f4f4f4] p-6">
+              <div key={idx} className="p-6 bg-secondary-bg rounded-lg border-l-4 border-accent">
                 <h3 className="text-xl font-bold text-primary mb-2">
                   {item.language}
                 </h3>
@@ -153,7 +157,7 @@ export default function About() {
             ].map((item, idx) => (
               <div
                 key={idx}
-                className="border border-black bg-white p-8 transition-colors duration-200 hover:bg-[#f4f4f4]"
+                className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
               >
                 <h3 className="text-2xl font-bold text-primary mb-4">
                   {item.title}
@@ -182,7 +186,7 @@ export default function About() {
                 'Patient Education & Counseling',
               ].map((interest, idx) => (
                 <div key={idx} className="flex items-start gap-4">
-                  <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center bg-[#e30613]">
+                  <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center flex-shrink-0 mt-1">
                     <svg className="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
@@ -196,7 +200,7 @@ export default function About() {
       </section>
 
       {/* CTA Section */}
-      <section className="border-t border-black bg-[#e30613] py-16 text-white md:py-24">
+      <section className="py-16 md:py-24 bg-primary text-white">
         <div className="container text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Let&apos;s Connect
@@ -206,7 +210,7 @@ export default function About() {
           </p>
           <a
             href="#/contact"
-            className="inline-flex min-h-14 items-center bg-[#111111] px-6 py-4 text-sm font-bold uppercase tracking-[0.14em] text-white transition-colors duration-200 hover:bg-white hover:text-[#111111] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#111111]"
+            className="inline-block px-8 py-4 bg-accent text-primary font-semibold rounded-lg hover:bg-accent/90 transition-all duration-300 hover:scale-105 shadow-lg"
           >
             Get in Touch
           </a>

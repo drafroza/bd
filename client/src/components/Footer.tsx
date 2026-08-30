@@ -1,113 +1,124 @@
-import { ArrowUp, Heart, Mail, MapPin, MessageCircle, Phone } from 'lucide-react';
-
-const footerLinks = [
-  { label: 'Home', href: '#/' },
-  { label: 'About', href: '#/about' },
-  { label: 'Resume', href: '#/resume' },
-  { label: 'Gallery', href: '#/gallery' },
-  { label: 'Contact', href: '#/contact' },
-];
+import { Mail, MapPin, Heart, MessageCircle, ArrowUp } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#111111] text-white">
-      <div className="container py-14 md:py-20">
-        <div className="mb-14 grid grid-cols-1 gap-12 lg:grid-cols-[1.4fr_0.7fr_1fr] lg:gap-20">
+    <footer className="bg-primary text-primary-foreground">
+      <div className="container py-12 md:py-16">
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-8">
+          {/* About Section */}
           <div>
-            <div className="mb-7 flex items-start gap-4">
-              <span className="flex h-12 w-12 shrink-0 items-center justify-center bg-[#e30613] text-lg font-black tracking-[-0.08em]">DA</span>
-              <div>
-                <p className="text-[0.65rem] font-bold uppercase tracking-[0.2em] text-[#e30613]">Professional profile</p>
-                <h2 className="mt-1 text-2xl font-black tracking-[-0.05em] text-white">Dr. Afroza</h2>
-              </div>
-            </div>
-            <p className="max-w-md text-sm leading-7 text-white/65">
-              MBBS, FCPS Part-I (Obstetrics &amp; Gynaecology). Dedicated to evidence-based clinical practice, empathy, and continuous learning.
+            <h3 className="text-xl font-bold mb-4 text-white">Dr. Afroza</h3>
+            <p className="text-sm opacity-90 leading-relaxed">
+              MBBS, FCPS Part-I (Obstetrics & Gynaecology). Dedicated medical professional with a commitment to evidence-based clinical practice, empathy, and continuous learning.
             </p>
           </div>
 
+          {/* Quick Links */}
           <div>
-            <p className="mb-6 text-[0.65rem] font-bold uppercase tracking-[0.2em] text-[#e30613]">Explore</p>
-            <nav className="grid gap-3" aria-label="Footer navigation">
-              {footerLinks.map((link, index) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="group inline-flex items-center gap-3 text-sm text-white/75 transition-colors duration-200 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#e30613]"
-                >
-                  <span className="font-mono text-xs text-[#e30613]">0{index + 1}</span>
-                  <span className="h-px w-0 bg-[#e30613] transition-all duration-200 group-hover:w-4" />
-                  {link.label}
+            <h4 className="text-lg font-semibold mb-4 text-white">Quick Links</h4>
+            <ul className="space-y-2.5 text-sm">
+              <li>
+                <a href="#/" className="opacity-90 hover:text-accent transition-colors duration-300 inline-flex items-center gap-1 group">
+                  <span className="w-0 group-hover:w-2 h-px bg-accent transition-all duration-300" /> Home
                 </a>
-              ))}
-            </nav>
+              </li>
+              <li>
+                <a href="#/about" className="opacity-90 hover:text-accent transition-colors duration-300 inline-flex items-center gap-1 group">
+                  <span className="w-0 group-hover:w-2 h-px bg-accent transition-all duration-300" /> About
+                </a>
+              </li>
+              <li>
+                <a href="#/resume" className="opacity-90 hover:text-accent transition-colors duration-300 inline-flex items-center gap-1 group">
+                  <span className="w-0 group-hover:w-2 h-px bg-accent transition-all duration-300" /> Resume
+                </a>
+              </li>
+              <li>
+                <a href="#/gallery" className="opacity-90 hover:text-accent transition-colors duration-300 inline-flex items-center gap-1 group">
+                  <span className="w-0 group-hover:w-2 h-px bg-accent transition-all duration-300" /> Gallery
+                </a>
+              </li>
+              <li>
+                <a href="#/contact" className="opacity-90 hover:text-accent transition-colors duration-300 inline-flex items-center gap-1 group">
+                  <span className="w-0 group-hover:w-2 h-px bg-accent transition-all duration-300" /> Contact
+                </a>
+              </li>
+            </ul>
           </div>
 
+          {/* Contact Information */}
           <div>
-            <p className="mb-6 text-[0.65rem] font-bold uppercase tracking-[0.2em] text-[#e30613]">Contact</p>
-            <div className="grid gap-4 text-sm">
-              <a
-                href="tel:+8801353187063"
-                className="group inline-flex items-center gap-3 text-base font-bold tabular-nums text-white transition-colors duration-200 hover:text-[#e30613] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#e30613]"
-                aria-label="Call +8801353187063"
-              >
-                <span className="flex h-9 w-9 items-center justify-center border border-white/25 text-[#e30613] transition-colors duration-200 group-hover:border-[#e30613]">
-                  <Phone size={15} aria-hidden="true" />
-                </span>
-                +8801353187063
-              </a>
-              <a
-                href="mailto:drafroza99@gmail.com"
-                className="inline-flex items-center gap-3 text-white/70 transition-colors duration-200 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#e30613]"
-              >
-                <Mail size={15} className="text-[#e30613]" aria-hidden="true" />
-                drafroza99@gmail.com
-              </a>
-              <div className="inline-flex items-start gap-3 text-white/70">
-                <MapPin size={15} className="mt-1 shrink-0 text-[#e30613]" aria-hidden="true" />
-                <span>Jhalakathi Sadar, Jhalakathi, Bangladesh</span>
+            <h4 className="text-lg font-semibold mb-4 text-white">Contact</h4>
+            <div className="space-y-3 text-sm">
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">
+                  <MessageCircle size={14} className="text-accent" />
+                </div>
+                <a
+                  href="https://t.me/Dr_Afroza_Akter_Nishy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="opacity-90 hover:text-accent transition-colors duration-300"
+                >
+                  Telegram: @Dr_Afroza_Akter_Nishy
+                </a>
               </div>
-              <a
-                href="https://t.me/Dr_Afroza_Akter_Nishy"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 text-white/70 transition-colors duration-200 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#e30613]"
-              >
-                <MessageCircle size={15} className="text-[#e30613]" aria-hidden="true" />
-                Telegram: @Dr_Afroza_Akter_Nishy
-              </a>
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">
+                  <Mail size={14} className="text-accent" />
+                </div>
+                <a href="mailto:drafroza99@gmail.com" className="opacity-90 hover:text-accent transition-colors duration-300">
+                  drafroza99@gmail.com
+                </a>
+              </div>
+              <div className="flex items-start gap-3">
+                <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center mt-0.5">
+                  <MapPin size={14} className="text-accent" />
+                </div>
+                <span className="opacity-90">
+                  Jhalakathi Sadar, Jhalakathi, Bangladesh
+                </span>
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="h-px bg-white/20" />
-        <div className="flex flex-col gap-4 pt-6 text-xs text-white/50 md:flex-row md:items-center md:justify-between">
-          <p>© {currentYear} Dr. Afroza. All rights reserved. | BMDC Reg. No: 142636</p>
-          <p className="inline-flex items-center gap-2">Made with <Heart size={12} className="fill-[#e30613] text-[#e30613]" aria-hidden="true" /> for healthcare excellence</p>
+        {/* Divider */}
+        <div className="h-px bg-white/15 mb-6" />
+
+        {/* Bottom Footer */}
+        <div className="flex flex-col md:flex-row items-center justify-between text-sm opacity-90 gap-4">
+          <p className="text-center md:text-left">
+            © {currentYear} Dr. Afroza. All rights reserved. | BMDC Reg. No: 142636
+          </p>
+          <div className="flex items-center gap-1">
+            Made with <Heart size={14} className="text-accent fill-accent" /> for healthcare excellence
+          </div>
         </div>
       </div>
 
-      <div className="fixed bottom-6 right-6 z-40 flex flex-col gap-3">
+      {/* Floating Action Buttons */}
+      <div className="fixed bottom-6 right-6 flex flex-col gap-3 z-40">
+        {/* Telegram Button */}
         <a
           href="https://t.me/Dr_Afroza_Akter_Nishy"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex h-12 w-12 items-center justify-center rounded-full bg-[#229ed9] text-white shadow-lg transition-transform duration-200 hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#e30613]"
+          className="w-14 h-14 bg-[#229ed9] hover:bg-[#1a8bc2] rounded-full flex items-center justify-center text-white shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl"
           title="Chat on Telegram"
-          aria-label="Chat on Telegram"
         >
-          <MessageCircle size={22} aria-hidden="true" />
+          <MessageCircle size={28} />
         </a>
+
+        {/* Scroll to Top Button */}
         <button
-          type="button"
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="flex h-12 w-12 items-center justify-center rounded-full bg-[#e30613] text-white shadow-lg transition-transform duration-200 hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#e30613]"
+          className="w-14 h-14 bg-accent hover:bg-accent/90 rounded-full flex items-center justify-center text-primary shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl"
           title="Scroll to top"
-          aria-label="Scroll to top"
         >
-          <ArrowUp size={20} aria-hidden="true" />
+          <ArrowUp size={24} />
         </button>
       </div>
     </footer>

@@ -13,21 +13,36 @@ export default function Resume() {
   }, []);
 
   return (
-    <div className="flex min-h-screen flex-col bg-white">
+    <div className="min-h-screen flex flex-col bg-background">
       <Header />
 
       {/* Hero Section */}
-      <section className="border-b border-black bg-white pb-16 pt-32 md:pb-24 md:pt-44">
-        <div className="container grid grid-cols-1 gap-8 md:grid-cols-[0.7fr_1fr] md:items-end md:gap-16">
-          <p className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-[#e30613]"><span className="mr-3 inline-block h-3 w-3 bg-[#e30613]" aria-hidden="true" />03 / Resume</p>
-          <div><h1 className="max-w-4xl text-6xl font-black leading-[0.9] tracking-[-0.08em] text-[#111111] md:text-8xl">A record of practice.</h1><p className="mt-7 max-w-xl border-l-2 border-[#e30613] pl-5 text-sm leading-7 text-[#4b4b4b]">MBBS, FCPS Part-I · BMDC Reg. No: 142636 · Clinical experience &amp; qualifications</p><a href="/CV-Dr.Afroza.pdf" download="CV-Dr.Afroza.pdf" className="mt-8 inline-flex min-h-14 items-center gap-3 bg-[#111111] px-6 py-4 text-sm font-bold uppercase tracking-[0.14em] text-white transition-colors duration-200 hover:bg-[#e30613] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#e30613]"><Download className="h-5 w-5" aria-hidden="true" />Download CV</a></div>
+      <section className="relative w-full py-24 md:py-32 bg-gradient-to-r from-primary to-primary/80 text-white mt-20">
+        <div className="container text-center">
+          <h1 className="text-5xl md:text-6xl font-bold mb-4 text-white">
+            Resume & Experience
+          </h1>
+          <p className="text-xl text-white/90 max-w-2xl mx-auto mb-8">
+            MBBS, FCPS Part-I | BMDC Reg. No: 142636 | Clinical Experience & Qualifications
+          </p>
+          <a
+            href="/CV-Dr.Afroza.pdf"
+            download="CV-Dr.Afroza.pdf"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-accent text-primary font-semibold rounded-lg hover:bg-accent/90 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+          >
+            <Download className="w-5 h-5" />
+            Download CV
+          </a>
         </div>
       </section>
 
       {/* Education Section */}
       <section className="py-16 md:py-24 bg-white">
         <div className="container">
-          <h2 className="mb-12 flex items-center gap-4 text-4xl font-black tracking-[-0.07em] text-primary md:text-6xl"><BookOpen className="h-8 w-8 text-accent" aria-hidden="true" />Education</h2>
+          <h2 className="text-4xl font-bold text-primary mb-12 flex items-center gap-3">
+            <BookOpen className="w-10 h-10 text-accent" />
+            Education
+          </h2>
 
           <div className="space-y-8 max-w-3xl">
             {[
@@ -59,9 +74,9 @@ export default function Resume() {
                 details: 'Secondary School Certificate with science specialization',
               },
             ].map((edu, idx) => (
-              <div key={idx} className="relative border-l-2 border-[#e30613] pb-8 pl-8">
-                <div className="absolute -left-[9px] top-0 h-4 w-4 bg-[#e30613]" />
-                <div className="border border-black bg-[#f4f4f4] p-6">
+              <div key={idx} className="relative pl-8 pb-8 border-l-2 border-accent">
+                <div className="absolute -left-4 top-0 w-6 h-6 bg-accent rounded-full border-4 border-white" />
+                <div className="bg-secondary-bg p-6 rounded-lg">
                   <div className="flex items-start justify-between mb-2">
                     <h3 className="text-2xl font-bold text-primary">
                       {edu.degree}
@@ -130,9 +145,9 @@ export default function Resume() {
                 ],
               },
             ].map((exp, idx) => (
-              <div key={idx} className="relative border-l-2 border-[#e30613] pb-8 pl-8">
-                <div className="absolute -left-[9px] top-0 h-4 w-4 bg-[#e30613]" />
-                <div className="border border-black bg-white p-6">
+              <div key={idx} className="relative pl-8 pb-8 border-l-2 border-accent">
+                <div className="absolute -left-4 top-0 w-6 h-6 bg-accent rounded-full border-4 border-white" />
+                <div className="bg-white p-6 rounded-lg shadow-lg">
                   <div className="flex items-start justify-between mb-2">
                     <h3 className="text-2xl font-bold text-primary">
                       {exp.position}
@@ -197,7 +212,7 @@ export default function Resume() {
                 ],
               },
             ].map((skillGroup, idx) => (
-              <div key={idx} className="border border-black bg-[#f4f4f4] p-8">
+              <div key={idx} className="bg-secondary-bg p-8 rounded-lg">
                 <h3 className="text-2xl font-bold text-primary mb-6">
                   {skillGroup.category}
                 </h3>
@@ -246,7 +261,7 @@ export default function Resume() {
                 description: 'Recipient of Board Merit Scholarships for exceptional performance in Secondary School Certificate (2015) and Higher Secondary Certificate (2017)',
               },
             ].map((award, idx) => (
-              <div key={idx} className="border border-black bg-white p-8 transition-colors duration-200 hover:bg-[#f4f4f4]">
+              <div key={idx} className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
                 <div className="flex items-start gap-4 mb-4">
                   <Award className="w-8 h-8 text-accent flex-shrink-0 mt-1" />
                   <div>
@@ -285,7 +300,7 @@ export default function Resume() {
                 venue: 'Active Participant',
               },
             ].map((seminar, idx) => (
-              <div key={idx} className="border-l-2 border-[#e30613] bg-[#f4f4f4] p-8">
+              <div key={idx} className="bg-secondary-bg p-8 rounded-lg border-l-4 border-accent">
                 <h3 className="text-xl font-bold text-primary mb-2">
                   {seminar.title}
                 </h3>
@@ -302,7 +317,7 @@ export default function Resume() {
       </section>
 
       {/* CTA Section */}
-      <section className="border-t border-black bg-[#e30613] py-16 text-white md:py-24">
+      <section className="py-16 md:py-24 bg-primary text-white">
         <div className="container text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Interested in Professional Collaboration?
@@ -312,7 +327,7 @@ export default function Resume() {
           </p>
           <a
             href="#/contact"
-            className="inline-flex min-h-14 items-center bg-[#111111] px-6 py-4 text-sm font-bold uppercase tracking-[0.14em] text-white transition-colors duration-200 hover:bg-white hover:text-[#111111] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#111111]"
+            className="inline-block px-8 py-4 bg-accent text-primary font-semibold rounded-lg hover:bg-accent/90 transition-all duration-300 hover:scale-105 shadow-lg"
           >
             Contact Me
           </a>

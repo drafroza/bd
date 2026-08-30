@@ -1,115 +1,102 @@
-import { useEffect, useState } from 'react';
-import { Menu, Phone, X } from 'lucide-react';
-
-const navItems = [
-  { label: 'Home', href: '#/' },
-  { label: 'About', href: '#/about' },
-  { label: 'Resume', href: '#/resume' },
-  { label: 'Gallery', href: '#/gallery' },
-  { label: 'Contact', href: '#/contact' },
-];
+import { useState, useEffect } from 'react';
+import { Menu, X } from 'lucide-react';
+import { Link } from 'wouter';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 24);
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const navItems = [
+    { label: 'Home', href: '#/' },
+    { label: 'About', href: '#/about' },
+    { label: 'Resume', href: '#/resume' },
+    { label: 'Gallery', href: '#/gallery' },
+    { label: 'Contact', href: '#/contact' },
+  ];
+
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 border-b border-black/15 bg-white transition-shadow duration-200 ${
-        isScrolled ? 'shadow-[0_5px_0_rgba(0,0,0,0.06)]' : ''
+      className={`fixed w-full top-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? 'bg-white/95 backdrop-blur-lg shadow-md'
+          : 'bg-transparent'
       }`}
     >
-      <div className="container flex min-h-[76px] items-center justify-between gap-6">
-        <a href="#/" className="group flex min-w-0 items-center gap-3" aria-label="Dr. Afroza home">
-          <span className="flex h-10 w-10 shrink-0 items-center justify-center bg-[#e30613] transition-transform duration-200 group-hover:rotate-3">
-            <span className="text-lg font-black tracking-[-0.08em] text-white">DA</span>
+      <div className="container flex items-center justify-between py-3 md:py-4">
+        {/* Logo */}
+        <Link href="#/" className="flex items-center gap-2.5 group">
+          <img
+            src="/images/homepage-logo.jpg"
+            alt="Dr. Afroza Logo"
+            className="h-9 w-9 md:h-10 md:w-10 rounded-full object-cover transition-transform duration-300 group-hover:scale-110 ring-2 ring-white/50"
+          />
+          <span className={`text-lg md:text-xl font-bold transition-colors duration-300 hidden sm:inline ${
+            isScrolled ? 'text-primary' : 'text-white'
+          }`}>
+            Dr. Afroza
           </span>
-          <span className="hidden min-w-0 sm:block">
-            <span className="block truncate text-[0.68rem] font-bold uppercase tracking-[0.2em] text-[#e30613]">Medical profile</span>
-            <span className="block truncate text-lg font-black tracking-[-0.04em] text-[#111111]">Dr. Afroza</span>
-          </span>
-        </a>
+        </Link>
 
-        <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary navigation">
-          {navItems.map((item, index) => (
-            <a
+        {/* Desktop Nav */}
+        <nav className="hidden md:flex items-center gap-1">
+          {navItems.map((item) => (
+            <Link
               key={item.href}
               href={item.href}
-              className="group relative px-3 py-3 text-[0.7rem] font-bold uppercase tracking-[0.16em] text-[#111111] transition-colors duration-200 hover:text-[#e30613] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#e30613]"
+              className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+                isScrolled
+                  ? 'text-foreground hover:text-primary hover:bg-primary/5'
+                  : 'text-white/90 hover:text-white hover:bg-white/10'
+              }`}
             >
-              <span className="mr-2 text-[#e30613]">0{index + 1}</span>
               {item.label}
-              <span className="absolute inset-x-3 bottom-1 h-px origin-left scale-x-0 bg-[#e30613] transition-transform duration-200 group-hover:scale-x-100" />
-            </a>
+            </Link>
           ))}
         </nav>
 
-        <div className="hidden items-center gap-4 lg:flex">
-          <span className="h-8 w-px bg-black/20" aria-hidden="true" />
-          <a
-            href="tel:+8801353187063"
-            className="inline-flex items-center gap-2 text-sm font-bold tabular-nums text-[#111111] transition-colors duration-200 hover:text-[#e30613] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#e30613]"
-            aria-label="Call +8801353187063"
-          >
-            <Phone size={16} strokeWidth={2.4} aria-hidden="true" />
-            <span>+8801353187063</span>
-          </a>
-        </div>
 
-        <div className="flex items-center gap-3 lg:hidden">
-          <a
-            href="tel:+8801353187063"
-            className="inline-flex items-center gap-1.5 text-xs font-bold tabular-nums text-[#111111] transition-colors duration-200 hover:text-[#e30613] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#e30613]"
-            aria-label="Call +8801353187063"
-          >
-            <Phone size={14} aria-hidden="true" />
-            <span>+8801353187063</span>
-          </a>
-          <button
-            type="button"
-            onClick={() => setIsOpen((open) => !open)}
-          className="inline-flex h-11 w-11 items-center justify-center border border-black/20 text-[#111111] transition-colors duration-200 hover:border-[#e30613] hover:text-[#e30613] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#e30613] lg:hidden"
-          aria-expanded={isOpen}
-          aria-controls="mobile-navigation"
-          aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
+        {/* Hamburger Menu Button - Mobile */}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className={`md:hidden p-2 rounded-lg transition-all duration-300 ${
+            isScrolled
+              ? 'text-foreground bg-gray-100 hover:bg-gray-200'
+              : 'text-white bg-white/15 hover:bg-white/25'
+          }`}
         >
-          {isOpen ? <X size={22} aria-hidden="true" /> : <Menu size={22} aria-hidden="true" />}
-          </button>
-        </div>
+          {isOpen ? <X size={22} /> : <Menu size={22} />}
+        </button>
       </div>
 
+      {/* Mobile Navigation Menu */}
       <nav
-        id="mobile-navigation"
-        className={`border-t border-black/15 bg-white lg:hidden ${isOpen ? 'block' : 'hidden'}`}
-        aria-label="Mobile navigation"
+        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+          isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+        } ${isScrolled ? 'bg-white shadow-lg' : 'bg-primary/95 backdrop-blur-md'}`}
       >
-        <div className="container grid gap-0 py-2">
-          {navItems.map((item, index) => (
-            <a
+        <div className="container py-3 flex flex-col gap-1">
+          {navItems.map((item) => (
+            <Link
               key={item.href}
               href={item.href}
+              className={`font-medium transition-colors duration-300 py-3 px-4 rounded-lg ${
+                isScrolled
+                  ? 'text-foreground hover:text-primary hover:bg-primary/5'
+                  : 'text-white/90 hover:text-white hover:bg-white/10'
+              }`}
               onClick={() => setIsOpen(false)}
-              className="flex min-h-12 items-center gap-3 border-b border-black/10 text-xs font-bold uppercase tracking-[0.18em] text-[#111111] transition-colors duration-200 last:border-b-0 hover:text-[#e30613] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[#e30613]"
             >
-              <span className="text-[#e30613]">0{index + 1}</span>
               {item.label}
-            </a>
+            </Link>
           ))}
-          <a
-            href="tel:+8801353187063"
-            onClick={() => setIsOpen(false)}
-            className="mt-2 inline-flex min-h-12 items-center gap-3 border-t border-black/20 pt-2 text-sm font-bold tabular-nums text-[#111111] hover:text-[#e30613] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[#e30613]"
-            aria-label="Call +8801353187063"
-          >
-            <Phone size={16} aria-hidden="true" />
-            +8801353187063
-          </a>
         </div>
       </nav>
     </header>
