@@ -46,18 +46,14 @@ export default function Gallery() {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-background">
+    <div className="flex min-h-screen flex-col bg-white">
       <Header />
 
       {/* Hero Section */}
-      <section className="relative w-full py-24 md:py-32 bg-gradient-to-r from-primary to-primary/80 text-white mt-20">
-        <div className="container text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-4 text-white">
-            Gallery
-          </h1>
-          <p className="text-xl text-white/90 max-w-2xl mx-auto">
-            Professional photos and medical activities
-          </p>
+      <section className="border-b border-black bg-white pb-16 pt-32 md:pb-24 md:pt-44">
+        <div className="container grid grid-cols-1 gap-8 md:grid-cols-[0.7fr_1fr] md:items-end md:gap-16">
+          <p className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-[#e30613]"><span className="mr-3 inline-block h-3 w-3 bg-[#e30613]" aria-hidden="true" />04 / Gallery</p>
+          <div><h1 className="max-w-4xl text-6xl font-black leading-[0.9] tracking-[-0.08em] text-[#111111] md:text-8xl">A visual record of learning.</h1><p className="mt-7 max-w-xl border-l-2 border-[#e30613] pl-5 text-sm leading-7 text-[#4b4b4b]">Professional photos, medical activities, and moments of recognition.</p></div>
         </div>
       </section>
 
@@ -68,15 +64,19 @@ export default function Gallery() {
             {galleryItems.map((item) => (
               <div
                 key={item.id}
-                className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
+                className="group relative cursor-pointer overflow-hidden border border-black transition-colors duration-200 hover:border-[#e30613]"
                 onClick={() => setSelectedImage(item.image)}
+                onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); setSelectedImage(item.image); } }}
+                role="button"
+                tabIndex={0}
+                aria-label={`Open ${item.title} image`}
               >
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
+                  className="h-64 w-full object-cover grayscale transition-transform duration-300 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                <div className="absolute inset-x-0 bottom-0 flex translate-y-2 flex-col justify-end bg-gradient-to-t from-black/85 via-black/45 to-transparent p-6 pt-24 opacity-0 transition-all duration-200 group-hover:translate-y-0 group-hover:opacity-100">
                   <h3 className="text-xl font-bold text-white mb-2">
                     {item.title}
                   </h3>
@@ -103,14 +103,16 @@ export default function Gallery() {
             <img
               src={selectedImage}
               alt="Gallery"
-              className="w-full h-auto rounded-lg"
+              className="w-full border border-white/20"
               onClick={(e) => e.stopPropagation()}
             />
             <button
+              type="button"
               onClick={() => setSelectedImage(null)}
-              className="absolute top-4 right-4 bg-white rounded-full p-2 hover:bg-gray-200 transition-colors duration-300"
+              aria-label="Close image viewer"
+              className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center bg-white transition-colors duration-200 hover:bg-[#e30613] hover:text-white"
             >
-              <X size={24} className="text-primary" />
+              <X size={24} aria-hidden="true" />
             </button>
           </div>
         </div>
@@ -136,7 +138,7 @@ export default function Gallery() {
                 count: '2+',
               },
             ].map((category, idx) => (
-              <div key={idx} className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+              <div key={idx} className="border border-black bg-white p-8 transition-colors duration-200 hover:bg-[#f4f4f4]">
                 <h3 className="text-2xl font-bold text-primary mb-3">
                   {category.title}
                 </h3>
@@ -161,7 +163,7 @@ export default function Gallery() {
           <p className="text-xl text-foreground max-w-2xl mx-auto mb-8">
             Additional professional photos and medical activity documentation will be added regularly to showcase ongoing clinical work and professional engagement.
           </p>
-          <div className="inline-block px-8 py-4 bg-secondary-bg rounded-lg border-l-4 border-accent">
+          <div className="inline-block border-l-2 border-[#e30613] bg-[#f4f4f4] px-8 py-4">
             <p className="text-foreground">
               Check back regularly for updated gallery content
             </p>
@@ -170,7 +172,7 @@ export default function Gallery() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-primary text-white">
+      <section className="border-t border-black bg-[#e30613] py-16 text-white md:py-24">
         <div className="container text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Want to Collaborate?
@@ -180,7 +182,7 @@ export default function Gallery() {
           </p>
           <a
             href="#/contact"
-            className="inline-block px-8 py-4 bg-accent text-primary font-semibold rounded-lg hover:bg-accent/90 transition-all duration-300 hover:scale-105 shadow-lg"
+            className="inline-flex min-h-14 items-center bg-[#111111] px-6 py-4 text-sm font-bold uppercase tracking-[0.14em] text-white transition-colors duration-200 hover:bg-white hover:text-[#111111] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#111111]"
           >
             Get in Touch
           </a>
