@@ -1,0 +1,7 @@
+# Publication Status
+
+The reviewed website update is saved in checkpoint `d81e7798` in the active web workspace. The Git-backed source was committed as `832b178` with the message `Refresh portfolio design and add phone contact links` and pushed successfully to the `main` branch of [`drafroza/bd`](https://github.com/drafroza/bd). The GitHub API confirmed that `main` points to commit `832b1789498c1b1276e2b76bdeeb1d0c2454a5ef`.
+
+The live Vercel connector response identified one linked project named `drafroza` with project ID `prj_4KcRyO2xYsgzUL6Jpo7pKQ2sdEKY` and a GitHub link to organization `drafroza`, repository `bd`. The Vercel response did not expose an explicit production-branch field, so the repository’s confirmed default branch is documented as `main`; the branch detail can be checked in Vercel’s project settings if needed.
+
+No deployment or publication action was performed from this task. The reviewed checkpoint is ready, and the user can use the connected hosting UI’s **Publish** action to publish the checkpoint. If Vercel is configured to deploy from `drafroza/bd` on `main`, the pushed commit is the deployment source.
