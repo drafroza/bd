@@ -50,6 +50,11 @@ export default function Footer() {
                   <span className="w-0 group-hover:w-2 h-px bg-accent transition-all duration-300" /> <LockKeyhole size={13} /> Login
                 </a>
               </li>
+              <li>
+                <a href="https://agrovalley-co.vercel.app/" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:text-accent transition-colors duration-300 inline-flex items-center gap-1 group">
+                  <span className="w-0 group-hover:w-2 h-px bg-accent transition-all duration-300" /> Johurul Haque
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -67,7 +72,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="opacity-90 hover:text-accent transition-colors duration-300"
                 >
-                  Telegram: @Dr_Afroza_Akter_Nishy
+                  Telegram
                 </a>
               </div>
               <div className="flex items-center gap-3">
