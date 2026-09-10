@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { Mail, MapPin, MessageCircle, Phone, Send, Heart, ExternalLink, Loader2, CheckCircle2, AlertCircle } from 'lucide-react';
+import { LockKeyhole } from 'lucide-react';
+import { Link } from 'wouter';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
@@ -271,6 +273,12 @@ export default function Contact() {
           </div>
         </div>
       </section>
+
+      <div className="container py-8 text-center">
+        <Link href="/login" className="inline-flex items-center gap-2 text-sm text-primary hover:text-accent transition-colors">
+          <LockKeyhole size={16} /> Login to secure area
+        </Link>
+      </div>
 
       <Footer />
       <div className="text-center pb-2 opacity-20">
