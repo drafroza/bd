@@ -1,4 +1,4 @@
-import { Mail, MapPin, Heart, MessageCircle, ArrowUp } from 'lucide-react';
+import { Mail, MapPin, Heart, MessageCircle, ArrowUp, LockKeyhole } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -43,6 +43,11 @@ export default function Footer() {
               <li>
                 <a href="#/contact" className="opacity-90 hover:text-accent transition-colors duration-300 inline-flex items-center gap-1 group">
                   <span className="w-0 group-hover:w-2 h-px bg-accent transition-all duration-300" /> Contact
+                </a>
+              </li>
+              <li>
+                <a href="#/login" className="opacity-90 hover:text-accent transition-colors duration-300 inline-flex items-center gap-1 group">
+                  <span className="w-0 group-hover:w-2 h-px bg-accent transition-all duration-300" /> <LockKeyhole size={13} /> Login
                 </a>
               </li>
             </ul>
