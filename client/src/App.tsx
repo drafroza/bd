@@ -13,6 +13,7 @@ import Contact from "./pages/Contact";
 import Login from "./pages/Login";
 import Private from "./pages/Private";
 import ResetPassword from "./pages/ResetPassword";
+import PrivateContact from "./pages/PrivateContact";
 import { AuthProvider } from "./contexts/AuthContext";
 
 function AppRouter() {
@@ -26,6 +27,7 @@ function AppRouter() {
       <Route path="/login" component={Login} />
       <Route path="/private" component={Private} />
       <Route path="/reset-password" component={ResetPassword} />
+      <Route path="/private-contact" component={PrivateContact} />
       <Route path="/404" component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

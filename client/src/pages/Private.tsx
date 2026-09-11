@@ -35,6 +35,7 @@ export default function Private() {
             </div>
             <div className="mt-10 p-5 rounded-xl bg-secondary/20 border border-primary/10 flex gap-3"><ShieldCheck className="text-accent shrink-0" size={22} /><p className="text-sm text-foreground/80">This page is rendered only after Supabase confirms a valid authenticated session. Keep any future private records behind Supabase Row Level Security policies as well.</p></div>
             <Link href="/reset-password" className="mt-6 inline-flex items-center justify-center px-4 py-2 rounded-lg bg-primary text-white text-sm font-semibold hover:bg-primary/90">Change password</Link>
+            <Link href="/private-contact" className="mt-6 ml-3 inline-flex items-center justify-center px-4 py-2 rounded-lg border border-primary/10 text-primary text-sm font-semibold hover:bg-secondary/40">Private contact</Link>
             <Link href="/contact" className="mt-8 inline-block text-sm text-primary hover:text-accent">Return to Contact</Link>
           </div>
         </div>
