@@ -7,6 +7,8 @@ type AuthContextValue = {
   loading: boolean;
   configured: boolean;
   signIn: (email: string, password: string) => Promise<{ error: string | null }>;
+  requestPasswordReset: (email: string) => Promise<{ error: string | null }>;
+  updatePassword: (password: string) => Promise<{ error: string | null }>;
   signOut: () => Promise<void>;
 };
 
@@ -50,6 +52,21 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         return { error: 'Secure login is not configured yet. Add the Supabase environment variables.' };
       }
       const { error } = await supabase.auth.signInWithPassword({ email, password });
+      return { error: error?.message ?? null };
+    },
+    requestPasswordReset: async (email) => {
+      if (!supabase) {
+        return { error: 'Secure login is not configured yet. Add the Supabase environment variables.' };
+      }
+      const redirectTo = `${window.location.origin}/#/reset-password`;
+      const { error } = await supabase.auth.resetPasswordForEmail(email, { redirectTo });
+      return { error: error?.message ?? null };
+    },
+    updatePassword: async (password) => {
+      if (!supabase) {
+        return { error: 'Secure login is not configured yet. Add the Supabase environment variables.' };
+      }
+      const { error } = await supabase.auth.updateUser({ password });
       return { error: error?.message ?? null };
     },
     signOut: async () => {
