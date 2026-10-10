@@ -14,6 +14,13 @@ type AuthContextValue = {
 
 const AuthContext = createContext<AuthContextValue | undefined>(undefined);
 
+function finishRecoveryCallback() {
+  const url = new URL(window.location.href);
+  url.searchParams.delete('flow');
+  window.history.replaceState(window.history.state, '', url.toString());
+  window.location.hash = '#/reset-password';
+}
+
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [session, setSession] = useState<Session | null>(null);
   const [loading, setLoading] = useState(true);
@@ -25,10 +32,14 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }
 
     let mounted = true;
+    const isRecoveryCallback = new URLSearchParams(window.location.search).get('flow') === 'password-recovery';
     supabase.auth.getSession().then(({ data }) => {
       if (mounted) {
         setSession(data.session);
         setLoading(false);
+        // getSession waits for detectSessionInUrl, so the recovery tokens are
+        // processed before the hash router is moved to its reset-password route.
+        if (isRecoveryCallback) finishRecoveryCallback();
       }
     });
 
@@ -37,9 +48,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       setLoading(false);
       // Supabase returns recovery tokens in the URL fragment. This app also uses
       // the fragment for hash routing, so navigate only after the SDK consumes them.
-      if (event === 'PASSWORD_RECOVERY') {
-        window.location.hash = '#/reset-password';
-      }
+      if (event === 'PASSWORD_RECOVERY') finishRecoveryCallback();
     });
 
     return () => {
@@ -65,7 +74,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       }
       // Keep the callback at the origin root: Supabase places auth tokens in the
       // fragment, which would otherwise collide with the app's hash-based route.
-      const redirectTo = `${window.location.origin}/`;
+      const redirectTo = `${window.location.origin}/?flow=password-recovery`;
       const { error } = await supabase.auth.resetPasswordForEmail(email, { redirectTo });
       return { error: error?.message ?? null };
     },
