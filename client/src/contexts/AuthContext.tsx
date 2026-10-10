@@ -32,9 +32,14 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       }
     });
 
-    const { data: subscription } = supabase.auth.onAuthStateChange((_event, nextSession) => {
+    const { data: subscription } = supabase.auth.onAuthStateChange((event, nextSession) => {
       setSession(nextSession);
       setLoading(false);
+      // Supabase returns recovery tokens in the URL fragment. This app also uses
+      // the fragment for hash routing, so navigate only after the SDK consumes them.
+      if (event === 'PASSWORD_RECOVERY') {
+        window.location.hash = '#/reset-password';
+      }
     });
 
     return () => {
@@ -58,7 +63,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       if (!supabase) {
         return { error: 'Secure login is not configured yet. Add the Supabase environment variables.' };
       }
-      const redirectTo = `${window.location.origin}/#/reset-password`;
+      // Keep the callback at the origin root: Supabase places auth tokens in the
+      // fragment, which would otherwise collide with the app's hash-based route.
+      const redirectTo = `${window.location.origin}/`;
       const { error } = await supabase.auth.resetPasswordForEmail(email, { redirectTo });
       return { error: error?.message ?? null };
     },
