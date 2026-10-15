@@ -36,7 +36,8 @@ export default function Footer() {
             <div className="footer-label">Say hello</div>
             <div className="footer-links">
               <a href="mailto:johurul.bsc@gmail.com">johurul.bsc@gmail.com</a>
-              <a href="https://drafroza.vercel.app/" target="_blank" rel="noopener noreferrer" className="family-site-link">Family: Dr. Afroza Akter ↗</a>
+              <a href="https://pond-lease.vercel.app/" target="_blank" rel="noopener noreferrer" className="footer-cta-link">Pond Lease Website <span aria-hidden="true">↗</span></a>
+              <a href="https://drafroza.vercel.app/" target="_blank" rel="noopener noreferrer" className="footer-cta-link">Family: Dr. Afroza Akter ↗</a>
               <a href="tel:+8801307085154">+৮৮০১৩০৭-০৮৫১৫৪</a>
               <a href="https://www.google.com/maps/@24.3983037,88.730349,16z" target="_blank" rel="noopener noreferrer">রাজশাহী, বাংলাদেশ ↗</a>
               <div className="footer-social-links">
