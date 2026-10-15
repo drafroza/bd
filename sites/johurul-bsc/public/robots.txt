@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://agrovalley-co.vercel.app/sitemap.xml
+Sitemap: https://johurul-bsc.vercel.app/sitemap.xml
