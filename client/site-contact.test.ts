@@ -30,6 +30,14 @@ describe('Public contact and auth removal', () => {
     expect(footer).toContain('aria-label="Email drafroza99@gmail.com"');
   });
 
+  it('links the Family: Johurul Haque footer item to the requested site', () => {
+    const footer = readClientFile('src/components/Footer.tsx');
+
+    expect(footer).toContain('Family : Johurul Haque');
+    expect(footer).toContain('href="https://johurul-bsc.vercel.app/"');
+    expect(footer).not.toContain('agrovalley-co.vercel.app');
+  });
+
   it('keeps Login and private routes out of the public navigation and router', () => {
     const footer = readClientFile('src/components/Footer.tsx');
     const contact = readClientFile('src/pages/Contact.tsx');

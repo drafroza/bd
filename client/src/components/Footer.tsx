@@ -46,8 +46,8 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="https://agrovalley-co.vercel.app/" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:text-accent transition-colors duration-300 inline-flex items-center gap-1 group">
-                  <span className="w-0 group-hover:w-2 h-px bg-accent transition-all duration-300" /> Johurul Haque
+                <a href="https://johurul-bsc.vercel.app/" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:text-accent transition-colors duration-300 inline-flex items-center gap-1 group">
+                  <span className="w-0 group-hover:w-2 h-px bg-accent transition-all duration-300" /> Family : Johurul Haque
                 </a>
               </li>
             </ul>
