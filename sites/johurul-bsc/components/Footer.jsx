@@ -51,7 +51,6 @@ export default function Footer() {
           <span>© {new Date().getFullYear()} M/S Agro Valley Co.</span>
           <span>Quality · Care · Supply</span>
           <span>Made for the everyday good.</span>
-          <span>Build Version: reveal jaguar body expire twenty post just police daring cradle stone divert - v1</span>
         </div>
       </div>
     </footer>
