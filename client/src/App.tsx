@@ -10,11 +10,6 @@ import About from "./pages/About";
 import Resume from "./pages/Resume";
 import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
-import Login from "./pages/Login";
-import Private from "./pages/Private";
-import ResetPassword from "./pages/ResetPassword";
-import PrivateContact from "./pages/PrivateContact";
-import { AuthProvider } from "./contexts/AuthContext";
 
 function AppRouter() {
   return (
@@ -24,10 +19,6 @@ function AppRouter() {
       <Route path="/resume" component={Resume} />
       <Route path="/gallery" component={Gallery} />
       <Route path="/contact" component={Contact} />
-      <Route path="/login" component={Login} />
-      <Route path="/private" component={Private} />
-      <Route path="/reset-password" component={ResetPassword} />
-      <Route path="/private-contact" component={PrivateContact} />
       <Route path="/404" component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
@@ -47,14 +38,12 @@ function App() {
         defaultTheme="light"
         // switchable
       >
-        <AuthProvider>
-          <WouterRouter hook={useHashLocation}>
-            <TooltipProvider>
-              <Toaster />
-              <AppRouter />
-            </TooltipProvider>
-          </WouterRouter>
-        </AuthProvider>
+        <WouterRouter hook={useHashLocation}>
+          <TooltipProvider>
+            <Toaster />
+            <AppRouter />
+          </TooltipProvider>
+        </WouterRouter>
       </ThemeProvider>
     </ErrorBoundary>
   );

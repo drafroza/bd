@@ -1,4 +1,4 @@
-import { Mail, MapPin, Heart, MessageCircle, ArrowUp, LockKeyhole } from 'lucide-react';
+import { Mail, MapPin, Heart, MessageCircle, ArrowUp, Phone } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -43,11 +43,6 @@ export default function Footer() {
               <li>
                 <a href="#/contact" className="opacity-90 hover:text-accent transition-colors duration-300 inline-flex items-center gap-1 group">
                   <span className="w-0 group-hover:w-2 h-px bg-accent transition-all duration-300" /> Contact
-                </a>
-              </li>
-              <li>
-                <a href="#/login" className="opacity-90 hover:text-accent transition-colors duration-300 inline-flex items-center gap-1 group">
-                  <span className="w-0 group-hover:w-2 h-px bg-accent transition-all duration-300" /> <LockKeyhole size={13} /> Login
                 </a>
               </li>
               <li>
@@ -120,6 +115,26 @@ export default function Footer() {
           title="Chat on Telegram"
         >
           <MessageCircle size={28} />
+        </a>
+
+        {/* Call Button */}
+        <a
+          href="tel:+8801307085154"
+          aria-label="Call +8801307085154"
+          title="Call +8801307085154"
+          className="w-14 h-14 bg-emerald-600 hover:bg-emerald-700 rounded-full flex items-center justify-center text-white shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl"
+        >
+          <Phone size={24} />
+        </a>
+
+        {/* Email Button */}
+        <a
+          href="mailto:drafroza99@gmail.com"
+          aria-label="Email drafroza99@gmail.com"
+          title="Email drafroza99@gmail.com"
+          className="w-14 h-14 bg-accent hover:bg-accent/90 rounded-full flex items-center justify-center text-primary shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl"
+        >
+          <Mail size={24} />
         </a>
 
         {/* Scroll to Top Button */}

@@ -1,7 +1,5 @@
 import { useState } from 'react';
 import { Mail, MapPin, MessageCircle, Phone, Send, Heart, ExternalLink, Loader2, CheckCircle2, AlertCircle } from 'lucide-react';
-import { LockKeyhole } from 'lucide-react';
-import { Link } from 'wouter';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
@@ -106,9 +104,9 @@ export default function Contact() {
                   <h3 className="text-xl font-bold text-primary">Phone</h3>
                 </div>
                 <p className="text-foreground/80 mb-6">For direct professional communication, call using the number below.</p>
-                <a href="tel:+8801353187063" aria-label="Call +8801353187063" className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-primary font-bold rounded-lg hover:bg-accent/90 transition-all duration-300 hover:scale-105 shadow-md">
+                <a href="tel:+8801307085154" aria-label="Call +8801307085154" className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-primary font-bold rounded-lg hover:bg-accent/90 transition-all duration-300 hover:scale-105 shadow-md">
                   <Phone size={16} />
-                  +8801353187063
+                  +8801307085154
                 </a>
               </div>
 
@@ -283,15 +281,9 @@ export default function Contact() {
             Telegram <ExternalLink size={14} />
           </a>
         </div>
-        <Link href="/login" className="inline-flex items-center gap-2 text-sm text-primary hover:text-accent transition-colors">
-          <LockKeyhole size={16} /> Login to secure area
-        </Link>
       </div>
 
       <Footer />
-      <div className="text-center pb-2 opacity-20">
-        <p className="text-[8px] text-muted-foreground uppercase tracking-widest">Build Version : G3F6BTVTCKU6A5BEY56PR3YJMHMK2RZV/#A!7b$ur%4Kmh$qrT#pxe4A%F -v3</p>
-      </div>
     </div>
   );
 }
