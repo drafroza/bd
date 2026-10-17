@@ -105,13 +105,13 @@ export default function Footer() {
       </div>
 
       {/* Floating Action Buttons */}
-      <div className="fixed bottom-6 right-6 flex flex-col gap-3 z-40">
+      <div className="fixed bottom-3 right-3 flex flex-row md:flex-col gap-2 md:gap-3 z-40 md:bottom-6 md:right-6">
         {/* Telegram Button */}
         <a
           href="https://t.me/Dr_Afroza_Akter_Nishy"
           target="_blank"
           rel="noopener noreferrer"
-          className="w-14 h-14 bg-[#229ed9] hover:bg-[#1a8bc2] rounded-full flex items-center justify-center text-white shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl"
+          className="w-11 h-11 md:w-14 md:h-14 bg-[#229ed9] hover:bg-[#1a8bc2] rounded-full flex items-center justify-center text-white shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl"
           title="Chat on Telegram"
         >
           <MessageCircle size={28} />
@@ -122,7 +122,7 @@ export default function Footer() {
           href="tel:+8801307085154"
           aria-label="Call +8801307085154"
           title="Call +8801307085154"
-          className="w-14 h-14 bg-emerald-600 hover:bg-emerald-700 rounded-full flex items-center justify-center text-white shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl"
+          className="w-11 h-11 md:w-14 md:h-14 bg-emerald-600 hover:bg-emerald-700 rounded-full flex items-center justify-center text-white shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl"
         >
           <Phone size={24} />
         </a>
@@ -132,7 +132,7 @@ export default function Footer() {
           href="mailto:drafroza99@gmail.com"
           aria-label="Email drafroza99@gmail.com"
           title="Email drafroza99@gmail.com"
-          className="w-14 h-14 bg-accent hover:bg-accent/90 rounded-full flex items-center justify-center text-primary shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl"
+          className="w-11 h-11 md:w-14 md:h-14 bg-accent hover:bg-accent/90 rounded-full flex items-center justify-center text-primary shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl"
         >
           <Mail size={24} />
         </a>
@@ -140,7 +140,7 @@ export default function Footer() {
         {/* Scroll to Top Button */}
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="w-14 h-14 bg-accent hover:bg-accent/90 rounded-full flex items-center justify-center text-primary shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl"
+          className="w-11 h-11 md:w-14 md:h-14 bg-accent hover:bg-accent/90 rounded-full flex items-center justify-center text-primary shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl"
           title="Scroll to top"
         >
           <ArrowUp size={24} />

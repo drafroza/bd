@@ -274,7 +274,7 @@ export default function Contact() {
 
       <div className="container py-8 text-center">
         <div className="flex flex-wrap items-center justify-center gap-3 mb-5">
-          <a href="https://agrovalley-co.vercel.app/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-white text-sm font-semibold rounded-lg hover:bg-primary/90 transition-colors">
+          <a href="https://johurul-bsc.vercel.app/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-white text-sm font-semibold rounded-lg hover:bg-primary/90 transition-colors">
             Johurul Haque <ExternalLink size={14} />
           </a>
           <a href="https://t.me/Dr_Afroza_Akter_Nishy" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 bg-[#229ed9] text-white text-sm font-semibold rounded-lg hover:bg-[#1a8bc2] transition-colors">
