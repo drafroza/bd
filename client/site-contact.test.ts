@@ -30,11 +30,14 @@ describe('Public contact and auth removal', () => {
     expect(footer).toContain('aria-label="Email drafroza99@gmail.com"');
   });
 
-  it('links the Family: Johurul Haque footer item to the requested site', () => {
+  it('links the green Business Website footer item to Agro Valley', () => {
     const footer = readClientFile('src/components/Footer.tsx');
 
-    expect(footer).toContain('Family : Johurul Haque');
-    expect(footer).toContain('href="https://johurul-bsc.vercel.app/"');
+    expect(footer).toContain('Business Website');
+    expect(footer).toContain('text-green-300');
+    expect(footer).toContain('href="https://avg-durgapur.vercel.app/"');
+    expect(footer).not.toContain('Family : Johurul Haque');
+    expect(footer).not.toContain('href="https://johurul-bsc.vercel.app/"');
     expect(footer).not.toContain('agrovalley-co.vercel.app');
   });
 
