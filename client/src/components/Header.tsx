@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { Phone } from 'lucide-react';
 import { Link } from 'wouter';
 
 export default function Header() {
@@ -48,19 +47,6 @@ export default function Header() {
         <nav className="flex min-w-0 items-center gap-0.5 sm:gap-1">
           {navItems.map((item) => (
             <div key={item.href} className="contents">
-              {item.label === 'Contact' && (
-                <a
-                  href="tel:+8809697745154"
-                  aria-label="Call +880 9697-745154"
-                  className={`mr-0.5 inline-flex items-center rounded-lg p-1.5 sm:mr-2 sm:gap-2 sm:px-3 sm:py-2 transition-all duration-300 ${
-                    isScrolled
-                      ? 'text-primary hover:bg-primary/5'
-                      : 'text-white/90 hover:bg-white/10 hover:text-white'
-                  }`}
-                >
-                  <Phone size={15} className="sm:h-[17px] sm:w-[17px]" />
-                </a>
-              )}
               <Link
                 href={item.href}
                 className={`rounded-lg px-1.5 py-2 text-[10px] font-medium transition-all duration-300 sm:px-4 sm:text-sm ${
