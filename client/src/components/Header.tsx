@@ -1,9 +1,8 @@
-import { useState, useEffect } from 'react';
-import { Menu, X, Phone } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { Phone } from 'lucide-react';
 import { Link } from 'wouter';
 
 export default function Header() {
-  const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -45,27 +44,26 @@ export default function Header() {
           </span>
         </Link>
 
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-1">
+        {/* Compact navigation stays visible on mobile to match the approved design. */}
+        <nav className="flex min-w-0 items-center gap-0.5 sm:gap-1">
           {navItems.map((item) => (
             <div key={item.href} className="contents">
               {item.label === 'Contact' && (
                 <a
                   href="tel:+8809697745154"
                   aria-label="Call +880 9697-745154"
-                  className={`mr-2 inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition-all duration-300 ${
+                  className={`mr-0.5 inline-flex items-center rounded-lg p-1.5 sm:mr-2 sm:gap-2 sm:px-3 sm:py-2 transition-all duration-300 ${
                     isScrolled
                       ? 'text-primary hover:bg-primary/5'
                       : 'text-white/90 hover:bg-white/10 hover:text-white'
                   }`}
                 >
-                  <Phone size={17} />
-                  <span>+880 9697-745154</span>
+                  <Phone size={15} className="sm:h-[17px] sm:w-[17px]" />
                 </a>
               )}
               <Link
                 href={item.href}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+                className={`rounded-lg px-1.5 py-2 text-[10px] font-medium transition-all duration-300 sm:px-4 sm:text-sm ${
                   isScrolled
                     ? 'text-foreground hover:text-primary hover:bg-primary/5'
                     : 'text-white/90 hover:text-white hover:bg-white/10'
@@ -76,58 +74,7 @@ export default function Header() {
             </div>
           ))}
         </nav>
-
-
-        {/* Phone + Hamburger Menu - Mobile */}
-        <div className="md:hidden flex items-center gap-2">
-          <a
-            href="tel:+8809697745154"
-            aria-label="Call +880 9697-745154"
-            className={`p-2 rounded-lg transition-all duration-300 ${
-              isScrolled
-                ? 'text-primary bg-gray-100 hover:bg-gray-200'
-                : 'text-white bg-white/15 hover:bg-white/25'
-            }`}
-          >
-            <Phone size={22} />
-          </a>
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label={isOpen ? 'Close menu' : 'Open menu'}
-            className={`p-2 rounded-lg transition-all duration-300 ${
-              isScrolled
-                ? 'text-foreground bg-gray-100 hover:bg-gray-200'
-                : 'text-white bg-white/15 hover:bg-white/25'
-            }`}
-          >
-            {isOpen ? <X size={22} /> : <Menu size={22} />}
-          </button>
-        </div>
       </div>
-
-      {/* Mobile Navigation Menu */}
-      <nav
-        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-          isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-        } ${isScrolled ? 'bg-white shadow-lg' : 'bg-primary/95 backdrop-blur-md'}`}
-      >
-        <div className="container py-3 flex flex-col gap-1">
-          {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={`font-medium transition-colors duration-300 py-3 px-4 rounded-lg ${
-                isScrolled
-                  ? 'text-foreground hover:text-primary hover:bg-primary/5'
-                  : 'text-white/90 hover:text-white hover:bg-white/10'
-              }`}
-              onClick={() => setIsOpen(false)}
-            >
-              {item.label}
-            </Link>
-          ))}
-        </div>
-      </nav>
     </header>
   );
 }
