@@ -52,7 +52,7 @@ export default function Home() {
       {/* HERO */}
       <section className="relative overflow-hidden">
         <div className="mx-auto grid max-w-6xl gap-10 px-6 pt-20 pb-16 md:grid-cols-[1.05fr_.95fr] md:gap-14 md:pt-28 md:pb-24">
-          <div className="flex flex-col justify-center">
+          <div className="hero-copy-column flex flex-col justify-center">
             <p className="text-sm font-medium text-[#5C6B5F]">
               রাজশাহী থেকে, ২০১৮ সাল থেকে
             </p>
@@ -66,7 +66,7 @@ export default function Home() {
               ফিড-ভেটেরিনারি সরবরাহ। লক্ষ্য একটাই—প্রতিদিন আপনার কাছে যেন
               তাজা আর নির্ভরযোগ্য পণ্য পৌঁছায়।
             </p>
-            <div className="mt-8 flex flex-wrap items-center gap-4">
+            <div className="hero-actions mt-8 flex flex-wrap items-center gap-4">
               <Link
                 href="/contact"
                 className="rounded-full bg-[#16241C] px-7 py-3.5 text-sm font-semibold text-[#F5F3EA] transition-colors hover:bg-[#2C6E63]"

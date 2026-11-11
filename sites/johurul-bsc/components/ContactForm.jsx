@@ -27,7 +27,7 @@ export default function ContactForm() {
   }
 
   function handleWA() {
-    window.open(`https://wa.me/8801307085154?text=${encodeURIComponent(buildMsg())}`, "_blank", "noopener,noreferrer");
+    window.open(`https://wa.me/8809697745154?text=${encodeURIComponent(buildMsg())}`, "_blank", "noopener,noreferrer");
   }
 
   return (

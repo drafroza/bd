@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
 import { Link } from 'wouter';
 
 export default function Header() {
@@ -48,32 +48,61 @@ export default function Header() {
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-1">
           {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
-                isScrolled
-                  ? 'text-foreground hover:text-primary hover:bg-primary/5'
-                  : 'text-white/90 hover:text-white hover:bg-white/10'
-              }`}
-            >
-              {item.label}
-            </Link>
+            <div key={item.href} className="contents">
+              {item.label === 'Contact' && (
+                <a
+                  href="tel:+8809697745154"
+                  aria-label="Call +880 9697-745154"
+                  className={`mr-2 inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition-all duration-300 ${
+                    isScrolled
+                      ? 'text-primary hover:bg-primary/5'
+                      : 'text-white/90 hover:bg-white/10 hover:text-white'
+                  }`}
+                >
+                  <Phone size={17} />
+                  <span>+880 9697-745154</span>
+                </a>
+              )}
+              <Link
+                href={item.href}
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+                  isScrolled
+                    ? 'text-foreground hover:text-primary hover:bg-primary/5'
+                    : 'text-white/90 hover:text-white hover:bg-white/10'
+                }`}
+              >
+                {item.label}
+              </Link>
+            </div>
           ))}
         </nav>
 
 
-        {/* Hamburger Menu Button - Mobile */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className={`md:hidden p-2 rounded-lg transition-all duration-300 ${
-            isScrolled
-              ? 'text-foreground bg-gray-100 hover:bg-gray-200'
-              : 'text-white bg-white/15 hover:bg-white/25'
-          }`}
-        >
-          {isOpen ? <X size={22} /> : <Menu size={22} />}
-        </button>
+        {/* Phone + Hamburger Menu - Mobile */}
+        <div className="md:hidden flex items-center gap-2">
+          <a
+            href="tel:+8809697745154"
+            aria-label="Call +880 9697-745154"
+            className={`p-2 rounded-lg transition-all duration-300 ${
+              isScrolled
+                ? 'text-primary bg-gray-100 hover:bg-gray-200'
+                : 'text-white bg-white/15 hover:bg-white/25'
+            }`}
+          >
+            <Phone size={22} />
+          </a>
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? 'Close menu' : 'Open menu'}
+            className={`p-2 rounded-lg transition-all duration-300 ${
+              isScrolled
+                ? 'text-foreground bg-gray-100 hover:bg-gray-200'
+                : 'text-white bg-white/15 hover:bg-white/25'
+            }`}
+          >
+            {isOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Navigation Menu */}

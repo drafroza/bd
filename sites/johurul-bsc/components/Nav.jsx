@@ -48,21 +48,30 @@ export default function Nav() {
         </div>
 
         <div className="hidden items-center gap-4 lg:flex">
-          <a href="tel:+8801307085154" className="nav-phone">+৮৮০ ১৩০৭-০৮৫১৫৪</a>
+          <a href="tel:+8809697745154" className="nav-phone" aria-label="Call +880 9697-745154">
+            <svg aria-hidden="true" viewBox="0 0 24 24" className="nav-phone-icon"><path d="M6.6 3.5 9 3l2 4.8-2.1 1.6a15.7 15.7 0 0 0 5.7 5.7l1.6-2.1 4.8 2-.5 2.4a2 2 0 0 1-2.1 1.6C10.7 18.4 5.6 13.3 5 5.6a2 2 0 0 1 1.6-2.1Z" /></svg>
+            <span>+880 9697-745154</span>
+          </a>
           <Link href="/contact" className="nav-cta">কথা বলুন <span aria-hidden="true">↗</span></Link>
         </div>
 
-        <button
-          type="button"
-          aria-label={open ? "মেনু বন্ধ করুন" : "মেনু খুলুন"}
-          aria-expanded={open}
-          onClick={() => setOpen((value) => !value)}
-          className="menu-toggle lg:hidden"
-        >
-          <span className={open ? "menu-line menu-line-top-open" : "menu-line"} />
-          <span className={open ? "menu-line menu-line-mid-open" : "menu-line"} />
-          <span className={open ? "menu-line menu-line-bottom-open" : "menu-line"} />
-        </button>
+        <div className="flex items-center gap-3 lg:hidden">
+          <a href="tel:+8809697745154" className="nav-phone nav-phone-mobile" aria-label="Call +880 9697-745154">
+            <svg aria-hidden="true" viewBox="0 0 24 24" className="nav-phone-icon"><path d="M6.6 3.5 9 3l2 4.8-2.1 1.6a15.7 15.7 0 0 0 5.7 5.7l1.6-2.1 4.8 2-.5 2.4a2 2 0 0 1-2.1 1.6C10.7 18.4 5.6 13.3 5 5.6a2 2 0 0 1 1.6-2.1Z" /></svg>
+            <span className="sr-only">+880 9697-745154</span>
+          </a>
+          <button
+            type="button"
+            aria-label={open ? "মেনু বন্ধ করুন" : "মেনু খুলুন"}
+            aria-expanded={open}
+            onClick={() => setOpen((value) => !value)}
+            className="menu-toggle"
+          >
+            <span className={open ? "menu-line menu-line-top-open" : "menu-line"} />
+            <span className={open ? "menu-line menu-line-mid-open" : "menu-line"} />
+            <span className={open ? "menu-line menu-line-bottom-open" : "menu-line"} />
+          </button>
+        </div>
       </nav>
 
       <div className={`mobile-nav lg:hidden ${open ? "mobile-nav-open" : ""}`}>

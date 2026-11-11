@@ -12,7 +12,7 @@ const catalog = [
 ];
 
 function inquiryUrl(category) {
-  return `https://wa.me/8801307085154?text=${encodeURIComponent(`আসসালামু আলাইকুম, M/S Agro Valley Co.-এর ${category} সম্পর্কে জানতে চাই।`)}`;
+  return `https://wa.me/8809697745154?text=${encodeURIComponent(`আসসালামু আলাইকুম, M/S Agro Valley Co.-এর ${category} সম্পর্কে জানতে চাই।`)}`;
 }
 
 export default function CatalogPage() {
@@ -25,7 +25,7 @@ export default function CatalogPage() {
             <h1 className="font-display font-extrabold text-4xl md:text-5xl lg:text-6xl leading-[1.1] max-w-4xl">আপনার প্রয়োজনের জন্য <span className="text-brand">সঠিক সমাধান।</span></h1>
             <p className="mt-6 max-w-2xl text-lg text-ink/60 leading-relaxed">মাছ, ডিম, ফিড, ঔষধ ও ভেটেরিনারি সাপ্লাই—M/S Agro Valley Co.-এর সমন্বিত পণ্য ও সেবা এক জায়গায় দেখুন।</p>
             <div className="mt-10 flex flex-wrap gap-4">
-              <a href="tel:+8801307085154" className="bg-brand text-white px-8 py-4 rounded-full text-sm font-semibold hover:bg-brand-dark transition-all shadow-soft hover:shadow-medium hover:-translate-y-0.5 btn-shine">📞 ফোনে যোগাযোগ করুন</a>
+              <a href="tel:+8809697745154" className="bg-brand text-white px-8 py-4 rounded-full text-sm font-semibold hover:bg-brand-dark transition-all shadow-soft hover:shadow-medium hover:-translate-y-0.5 btn-shine">📞 ফোনে যোগাযোগ করুন</a>
               <Link href="/contact" className="border border-ink/15 bg-white/50 backdrop-blur-sm px-8 py-4 rounded-full text-sm font-semibold hover:border-brand/40 hover:text-brand-dark transition-all">অনুসন্ধান পাঠান</Link>
             </div>
           </div>
@@ -64,7 +64,7 @@ export default function CatalogPage() {
             <div className="text-ink/60 leading-relaxed">
               <p className="text-lg">পণ্য, পরিমাণ, সরবরাহের স্থান এবং সময় জানালে আমরা আপনার অনুসন্ধান অনুযায়ী তথ্য দিতে পারি। মূল্য ও স্টক পরিবর্তনশীল হওয়ায় নিশ্চিত তথ্যের জন্য সরাসরি ফোন বা WhatsApp-এ যোগাযোগ করুন।</p>
               <div className="mt-8 flex flex-wrap gap-4">
-                <a href="https://wa.me/8801307085154" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-semibold text-brand-dark bg-brand/5 px-5 py-3 rounded-full hover:bg-brand/10 transition-colors">+৮৮০ ১৩০৭-০৮৫১৫৪ →</a>
+                <a href="https://wa.me/8809697745154" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-semibold text-brand-dark bg-brand/5 px-5 py-3 rounded-full hover:bg-brand/10 transition-colors">+880 9697-745154 →</a>
                 <a href="mailto:johurul.bsc@gmail.com" className="inline-flex items-center gap-2 text-sm font-semibold text-brand-dark bg-brand/5 px-5 py-3 rounded-full hover:bg-brand/10 transition-colors">johurul.bsc@gmail.com →</a>
               </div>
             </div>

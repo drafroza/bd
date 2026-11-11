@@ -37,8 +37,10 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--sun); outline-o
 .nav-link::after { content: ""; position: absolute; right: 12px; bottom: 3px; left: 12px; height: 1px; background: var(--sun); transform: scaleX(0); transform-origin: right; transition: transform .25s ease; }
 .nav-link:hover, .nav-link-active { color: var(--brand-dark); }
 .nav-link:hover::after, .nav-link-active::after { transform: scaleX(1); transform-origin: left; }
-.nav-phone { color: rgba(23, 32, 26, .52); font: 10px var(--font-mono); letter-spacing: -.03em; }
+.nav-phone { display: inline-flex; align-items: center; gap: 7px; color: rgba(23, 32, 26, .66); font: 10px var(--font-mono); letter-spacing: -.03em; }
 .nav-phone:hover { color: var(--brand); }
+.nav-phone-icon { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.7; }
+.nav-phone-mobile { padding: 8px 2px; color: var(--brand-dark); }
 .nav-cta, .button-primary { display: inline-flex; align-items: center; justify-content: center; gap: 16px; border-radius: 2px; background: var(--brand); color: #fff; padding: 12px 17px; font-size: 13px; font-weight: 600; transition: background .2s ease, transform .2s ease, box-shadow .2s ease; }
 .nav-cta:hover, .button-primary:hover { background: var(--brand-dark); box-shadow: 0 10px 22px rgba(18, 99, 63, .18); transform: translateY(-2px); }
 .menu-toggle { display: flex; flex-direction: column; width: 32px; gap: 5px; padding: 8px 0 8px 8px; }
@@ -148,6 +150,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--sun); outline-o
   .manifesto-section, .divisions-section, .field-section { padding: 88px 0; }
 }
 @media (max-width: 640px) {
+  .hero-copy-column { padding-top: 18px; }
+  .hero-actions { margin-bottom: 16px; }
   .hero-section { padding-bottom: 56px; }
   .hero-section::before { mask-image: none; opacity: .17; }
   .hero-title { font-size: clamp(3.4rem, 16vw, 5rem); }

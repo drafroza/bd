@@ -25,8 +25,8 @@ export default function ContactPage() {
               <div className="space-y-8">
                 <div className="group">
                   <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink/40 mb-3 font-medium">ফোন / WhatsApp</p>
-                  <a href="tel:+8801307085154" className="block text-xl font-semibold text-ink hover:text-brand transition-colors">+৮৮০ ১৩০৭-০৮৫১৫৪</a>
-                  <a href="https://wa.me/8801307085154" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 mt-3 text-sm font-medium text-brand-dark bg-brand/5 px-4 py-2 rounded-full hover:bg-brand/10 transition-colors"><span>💬</span> WhatsApp-এ বার্তা পাঠান →</a>
+                  <a href="tel:+8809697745154" className="block text-xl font-semibold text-ink hover:text-brand transition-colors">+880 9697-745154</a>
+                  <a href="https://wa.me/8809697745154" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 mt-3 text-sm font-medium text-brand-dark bg-brand/5 px-4 py-2 rounded-full hover:bg-brand/10 transition-colors"><span>💬</span> WhatsApp-এ বার্তা পাঠান →</a>
                 </div>
                 <div className="pt-6 border-t border-ink/10">
                   <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink/40 mb-3 font-medium">ইমেইল</p>
@@ -45,8 +45,8 @@ export default function ContactPage() {
                 </div>
               </div>
               <div className="grid grid-cols-2 gap-3 pt-4">
-                <a href="tel:+8801307085154" className="flex items-center justify-center gap-2 bg-brand text-white py-3 rounded-xl text-sm font-semibold hover:bg-brand-dark transition-all shadow-soft hover:shadow-medium"><span>📞</span> কল করুন</a>
-                <a href="https://wa.me/8801307085154" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 border border-ink/15 bg-white py-3 rounded-xl text-sm font-semibold hover:border-brand/40 hover:text-brand-dark transition-all"><span>💬</span> WhatsApp</a>
+                <a href="tel:+8809697745154" className="flex items-center justify-center gap-2 bg-brand text-white py-3 rounded-xl text-sm font-semibold hover:bg-brand-dark transition-all shadow-soft hover:shadow-medium"><span>📞</span> কল করুন</a>
+                <a href="https://wa.me/8809697745154" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 border border-ink/15 bg-white py-3 rounded-xl text-sm font-semibold hover:border-brand/40 hover:text-brand-dark transition-all"><span>💬</span> WhatsApp</a>
               </div>
             </div>
             <div className="lg:col-span-7 reveal reveal-delay-2">

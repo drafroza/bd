@@ -12,11 +12,11 @@ describe('Public contact and auth removal', () => {
     const contact = readClientFile('src/pages/Contact.tsx');
     const footer = readClientFile('src/components/Footer.tsx');
 
-    expect(contact.match(/href="tel:\+8801307085154"/g)).toHaveLength(1);
-    expect(contact).toContain('+8801307085154');
-    expect(contact).toContain('aria-label="Call +8801307085154"');
-    expect(footer).toContain('href="tel:+8801307085154"');
-    expect(footer).toContain('title="Call +8801307085154"');
+    expect(contact.match(/href="tel:\+8809697745154"/g)).toHaveLength(1);
+    expect(contact).toContain('+8809697745154');
+    expect(contact).toContain('aria-label="Call +8809697745154"');
+    expect(footer).toContain('href="tel:+8809697745154"');
+    expect(footer).toContain('title="Call +8809697745154"');
     expect(contact).not.toContain('+8801353187063');
     expect(footer).not.toContain('+8801353187063');
   });
@@ -25,7 +25,7 @@ describe('Public contact and auth removal', () => {
     const footer = readClientFile('src/components/Footer.tsx');
 
     expect(footer).toContain('https://t.me/Dr_Afroza_Akter_Nishy');
-    expect(footer).toContain('href="tel:+8801307085154"');
+    expect(footer).toContain('href="tel:+8809697745154"');
     expect(footer).toContain('href="mailto:drafroza99@gmail.com"');
     expect(footer).toContain('aria-label="Email drafroza99@gmail.com"');
   });

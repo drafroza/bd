@@ -104,9 +104,9 @@ export default function Contact() {
                   <h3 className="text-xl font-bold text-primary">Phone</h3>
                 </div>
                 <p className="text-foreground/80 mb-6">For direct professional communication, call using the number below.</p>
-                <a href="tel:+8801307085154" aria-label="Call +8801307085154" className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-primary font-bold rounded-lg hover:bg-accent/90 transition-all duration-300 hover:scale-105 shadow-md">
+                <a href="tel:+8809697745154" aria-label="Call +8809697745154" className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-primary font-bold rounded-lg hover:bg-accent/90 transition-all duration-300 hover:scale-105 shadow-md">
                   <Phone size={16} />
-                  +8801307085154
+                  +880 9697-745154
                 </a>
               </div>
 

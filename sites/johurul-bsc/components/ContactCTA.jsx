@@ -13,7 +13,7 @@ export default function ContactCTA() {
           </div>
           <div className="flex flex-wrap gap-4 justify-center">
             <Link href="/contact" className="bg-brand text-white px-8 py-4 rounded-full text-sm font-semibold hover:bg-brand-dark transition-all duration-300 shadow-glow hover:shadow-medium hover:-translate-y-0.5 btn-shine">যোগাযোগ করুন</Link>
-            <a href="https://wa.me/8801307085154" target="_blank" rel="noopener noreferrer" className="border border-white/20 bg-white/5 backdrop-blur-sm px-8 py-4 rounded-full text-sm font-semibold hover:bg-white/10 hover:border-white/40 transition-all duration-300 hover:-translate-y-0.5">WhatsApp</a>
+            <a href="https://wa.me/8809697745154" target="_blank" rel="noopener noreferrer" className="border border-white/20 bg-white/5 backdrop-blur-sm px-8 py-4 rounded-full text-sm font-semibold hover:bg-white/10 hover:border-white/40 transition-all duration-300 hover:-translate-y-0.5">WhatsApp</a>
           </div>
         </div>
       </div>
